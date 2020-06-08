@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: rent-client
+  profiles:
+#    active: dev
+    active: staging
+#    active: prod
+
+server:
+  port: 7979

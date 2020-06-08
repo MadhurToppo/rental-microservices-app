@@ -1,0 +1,52 @@
+version: '3.3'
+
+services:
+  mysql-database:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_USER=root
+    ports:
+      - 3306:3306
+  authorization-server:
+    image: authorization-server
+    depends_on:
+      - mysql-database
+    ports:
+      - 7171:7171
+  discovery-service:
+    image: discovery-service
+    ports:
+      - 8761:8761
+  customer-service:
+    image: customer-service
+    depends_on:
+      - mysql-database
+      - authorization-server
+      - discovery-service
+    ports:
+      - 7272:7272
+  product-service:
+    image: product-service
+    depends_on:
+      - mysql-database
+      - authorization-server
+      - discovery-service
+    ports:
+      - 7373:7373
+  rent-service:
+    image: rent-service
+    depends_on:
+      - mysql-database
+      - authorization-server
+      - discovery-service
+    ports:
+      - 7575:7575
+  rent-client:
+    image: rent-client
+    depends_on:
+      - mysql-database
+      - authorization-server
+      - discovery-service
+    ports:
+      - 7979:7979

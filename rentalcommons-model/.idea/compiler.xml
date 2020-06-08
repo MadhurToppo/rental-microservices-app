@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="discovery-service" />
+        <module name="rent-service" />
+        <module name="product-service" />
+        <module name="authorization-server" />
+        <module name="customer-service" />
+        <module name="rentalcommons-model" />
+        <module name="rental-ui" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="docker-spring-boot" target="1.8" />
+      <module name="zuul-service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="authorization-server" options="-parameters" />
+      <module name="customer-service" options="-parameters" />
+      <module name="discovery-service" options="-parameters" />
+      <module name="docker-spring-boot" options="-parameters" />
+      <module name="product-service" options="-parameters" />
+      <module name="rent-service" options="-parameters" />
+      <module name="rental-ui" options="-parameters" />
+      <module name="zuul-service" options="-parameters" />
+    </option>
+  </component>
+</project>

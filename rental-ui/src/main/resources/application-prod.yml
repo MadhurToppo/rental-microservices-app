@@ -1,0 +1,33 @@
+eureka:
+  instance:
+    instance-id: ${spring.application.name}
+    hostname: 192.168.99.101
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+#      defaultZone: http://192.168.99.101:8761/eureka
+
+security:
+  basic:
+    enabled: false
+  oauth2:
+    client:
+      client-id: mobile
+      client-secret: pin
+      auto-approve-scopes: '.*'
+      user-authorization-uri: http://${eureka.instance.hostname}:7171/oauth/authorize
+      access-token-uri: http://${eureka.instance.hostname}:7171/oauth/token
+#      user-authorization-uri: http://192.168.99.101:7171/oauth/authorize
+#      access-token-uri: http://192.168.99.101:7171/oauth/token
+    resource:
+      token-info-uri: http://${eureka.instance.hostname}:7171/oauth/check_token
+#      token-info-uri: http://192.168.99.101:7171/oauth/check_token
+
+server:
+  servlet:
+    session:
+      cookie:
+        name: KSESSION
+#  address: 192.168.99.101

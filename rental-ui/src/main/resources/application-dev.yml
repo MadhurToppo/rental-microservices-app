@@ -1,0 +1,35 @@
+environment:
+  machine: localhost
+  discovery-server:
+    port: 8761
+  authorization-server:
+    port: 7171
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}
+    hostname: ${environment.machine}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${environment.discovery-server.port}/eureka
+
+security:
+  basic:
+    enabled: false
+  oauth2:
+    client:
+      client-id: mobile
+      client-secret: pin
+      auto-approve-scopes: '.*'
+      user-authorization-uri: http://${environment.machine}:${environment.authorization-server.port}/oauth/authorize
+      access-token-uri: http://${environment.machine}:${environment.authorization-server.port}/oauth/token
+    resource:
+      token-info-uri: http://${environment.machine}:${environment.authorization-server.port}/oauth/check_token
+
+server:
+  servlet:
+    session:
+      cookie:
+        name: KSESSION

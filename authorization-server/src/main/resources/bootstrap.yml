@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: authorization-server
+  profiles:
+#    active: dev
+#    active: staging
+    active: prod
+
+server:
+  port: 7171
+

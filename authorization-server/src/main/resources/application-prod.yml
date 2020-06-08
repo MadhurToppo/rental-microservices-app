@@ -1,0 +1,27 @@
+database: mysql
+
+spring:
+  cloud:
+    gcp:
+      sql:
+        instance-connection-name: spring-carving-278907:us-central1:mysql-instance
+        database-name: rent_authDB
+  datasource:
+    initialization-mode: always
+    username: root
+    password: password
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        type: trace

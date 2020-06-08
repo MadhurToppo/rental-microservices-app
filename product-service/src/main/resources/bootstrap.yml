@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: product-service
+  profiles:
+#    active: dev
+    active: staging
+#    active: prod
+
+server:
+  port: 7373

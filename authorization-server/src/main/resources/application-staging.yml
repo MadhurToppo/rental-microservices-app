@@ -1,0 +1,26 @@
+environment:
+  machine: 192.168.99.101
+  mysql-server:
+    port: 3306
+
+spring:
+  datasource:
+    url: jdbc:mysql://${environment.machine}:${environment.mysql-server.port}/rent_auth?createDatabaseIfNotExist=true
+    username: root
+    password: password
+    initialization-mode: always
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        type: trace
