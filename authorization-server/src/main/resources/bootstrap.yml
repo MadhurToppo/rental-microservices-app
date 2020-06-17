@@ -4,7 +4,8 @@ spring:
   profiles:
 #    active: dev
 #    active: staging
-    active: prod
+#    active: prod
+    active: kubernetes
 
 server:
   port: 7171

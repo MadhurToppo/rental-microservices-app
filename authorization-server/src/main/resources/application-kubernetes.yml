@@ -1,14 +1,17 @@
-environment:
-  machine: 192.168.99.101
-  mysql-server:
-    port: 3306
+database: mysql
 
 spring:
+  cloud:
+    kubernetes:
+      enabled: true
+    gcp:
+      sql:
+        instance-connection-name: spring-carving-278907:us-central1:mysql-instance
+        database-name: k8_rent_authDB
   datasource:
-    url: jdbc:mysql://${environment.machine}:${environment.mysql-server.port}/rent_auth?createDatabaseIfNotExist=true
+    initialization-mode: always
     username: root
     password: password
-    initialization-mode: always
   jpa:
     hibernate:
       naming:

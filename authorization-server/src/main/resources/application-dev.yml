@@ -27,6 +27,9 @@ environment:
     port: 3306
 
 spring:
+  cloud:
+    kubernetes:
+      enabled: false
   datasource:
     url: jdbc:mysql://${environment.mysql-server.machine}:${environment.mysql-server.port}/rent_auth?createDatabaseIfNotExist=true
     username: root
