@@ -1,11 +1,11 @@
+server:
+  port: 7171
+
 spring:
   application:
     name: authorization-server
   profiles:
 #    active: dev
 #    active: staging
-#    active: prod
     active: kubernetes
-
-server:
-  port: 7171
+#    active: prod

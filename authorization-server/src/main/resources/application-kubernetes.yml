@@ -4,12 +4,9 @@ spring:
   cloud:
     kubernetes:
       enabled: true
-    gcp:
-      sql:
-        instance-connection-name: spring-carving-278907:us-central1:mysql-instance
-        database-name: k8_rent_authDB
   datasource:
     initialization-mode: always
+    url: jdbc:mysql://34.71.210.229/k8_rent_authDB?useSSL=false
     username: root
     password: password
   jpa:
@@ -24,7 +21,8 @@ spring:
 
 dekorate:
   kubernetes:
-    serviceType: "NodePort"
+    serviceType: "LoadBalancer"
+    expose: true
 
 logging:
   level:
