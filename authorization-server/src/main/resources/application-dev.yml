@@ -23,7 +23,7 @@
 environment:
   machine: localhost
   mysql-server:
-    machine: 192.168.99.101
+    machine: 127.0.0.1
     port: 3306
 
 spring:
@@ -31,7 +31,7 @@ spring:
     kubernetes:
       enabled: false
   datasource:
-    url: jdbc:mysql://${environment.mysql-server.machine}:${environment.mysql-server.port}/rent_auth?createDatabaseIfNotExist=true
+    url: jdbc:mysql://${environment.mysql-server.machine}:${environment.mysql-server.port}/rent_authDB?createDatabaseIfNotExist=true
     username: root
     password: password
     initialization-mode: always

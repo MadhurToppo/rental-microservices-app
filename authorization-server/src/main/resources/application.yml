@@ -5,7 +5,7 @@ spring:
   application:
     name: authorization-server
   profiles:
-#    active: dev
+    active: dev
 #    active: staging
-    active: kubernetes
+#    active: kubernetes
 #    active: prod
