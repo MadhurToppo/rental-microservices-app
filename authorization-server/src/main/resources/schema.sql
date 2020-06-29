@@ -42,7 +42,6 @@ create table if not exists  user (
   unique key username (username)
 ) engine=innodb ;
 
-
 create table  if not exists permission_role (
   permission_id int(11) default null,
   role_id int(11) default null,
@@ -51,8 +50,6 @@ create table  if not exists permission_role (
   constraint permission_role_ibfk_1 foreign key (permission_id) references permission (id),
   constraint permission_role_ibfk_2 foreign key (role_id) references role (id)
 ) engine=innodb ;
-
-
 
 create table if not exists role_user (
   role_id int(11) default null,

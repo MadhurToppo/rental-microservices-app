@@ -2,9 +2,9 @@ spring:
   application:
     name: discovery-service
   profiles:
-#    active: dev
+    active: dev
 #    active: staging
-    active: prod
+#    active: prod
 
-server:
-  port: 8761
+#server:
+#  port: 8761

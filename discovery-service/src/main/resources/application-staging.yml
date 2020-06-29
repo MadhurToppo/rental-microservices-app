@@ -1,3 +1,6 @@
+server:
+  port: 8761
+
 environment:
   machine: 192.168.99.101
 

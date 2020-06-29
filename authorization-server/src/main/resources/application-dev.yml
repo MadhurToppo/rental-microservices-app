@@ -19,6 +19,7 @@
 #    org:
 #      hibernate:
 #        type: trace
+database: mysql
 
 environment:
   machine: localhost
