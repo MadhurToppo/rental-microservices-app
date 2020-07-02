@@ -31,3 +31,9 @@ dekorate:
   kubernetes:
     serviceType: "LoadBalancer"
     expose: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

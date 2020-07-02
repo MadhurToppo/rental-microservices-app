@@ -11,7 +11,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 
 @SpringBootApplication
 @EntityScan(basePackages = "com.madhurtoppo.rentalcommons.model.customer")
-@EnableResourceServer
+//@EnableResourceServer
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 //@EnableEurekaClient
 @EnableDiscoveryClient

@@ -38,4 +38,9 @@ public class CustomerController {
     customerService.delete(id);
   }
 
+  @GetMapping(value = "/hi")
+  public String hi() {
+    return "Hi";
+  }
+
 }
