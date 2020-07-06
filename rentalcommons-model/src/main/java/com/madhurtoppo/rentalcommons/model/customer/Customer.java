@@ -2,7 +2,6 @@ package com.madhurtoppo.rentalcommons.model.customer;
 
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 

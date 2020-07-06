@@ -1,0 +1,39 @@
+database: mysql
+
+eureka:
+  client:
+    enabled: false
+
+spring:
+  cloud:
+    kubernetes:
+      enabled: true
+  datasource:
+    initialization-mode: always
+    url: jdbc:mysql://34.71.210.229/k8_rent_productDB?useSSL=false
+    username: root
+    password: password
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+
+security:
+  oauth2:
+    resource:
+      token-info-uri: http://localhost:31350/oauth/check_token
+    client:
+      client-id: mobile
+      client-secret: pin
+
+dekorate:
+  kubernetes:
+    serviceType: "LoadBalancer"
+    expose: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

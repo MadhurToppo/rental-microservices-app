@@ -1,4 +1,0 @@
-FROM openjdk:8-alpine
-EXPOSE 7373
-ADD target/product-service.jar product-service.jar
-ENTRYPOINT ["java","-jar","product-service.jar"]

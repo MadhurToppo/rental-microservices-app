@@ -3,7 +3,7 @@ environment:
   discovery-server:
     port: 8761
   mysql-server:
-    machine: 192.168.99.101
+    machine: 127.0.0.1
     port: 3306
   authorization-server:
     port: 7171
@@ -19,15 +19,29 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${environment.discovery-server.port}/eureka
 
 spring:
+  cloud:
+    kubernetes:
+      enabled: false
   datasource:
     url: jdbc:mysql://${environment.mysql-server.machine}:${environment.mysql-server.port}/rent_rental?allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true
     username: root
     password: password
+    initialization-mode: always
   jpa:
     hibernate:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
       ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        type: trace
 
 security:
   oauth2:
@@ -36,3 +50,9 @@ security:
     client:
       client-id: mobile
       client-secret: pin
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

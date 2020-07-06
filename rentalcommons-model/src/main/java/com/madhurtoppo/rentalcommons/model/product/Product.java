@@ -1,7 +1,6 @@
 package com.madhurtoppo.rentalcommons.model.product;
 
 import lombok.Data;
-
 import javax.persistence.*;
 
 @Entity
@@ -18,4 +17,5 @@ public class Product {
   private String type;
   private String category;
   private int year;
+
 }
