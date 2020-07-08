@@ -10,6 +10,7 @@ import java.util.List;
 @Table(name = "user")
 @Data
 public class User implements Serializable {
+
   public User() {
   }
 

@@ -4,13 +4,13 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "product")
+@Table(name = "Product")
 @Data
 public class Product {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  int id;
+  int productId;
 
   private String make;
   private String model;

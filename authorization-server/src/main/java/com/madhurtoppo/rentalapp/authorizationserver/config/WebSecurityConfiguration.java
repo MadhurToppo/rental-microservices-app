@@ -17,8 +17,6 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 //  New Code Function
   @Override
   protected void configure(HttpSecurity http) throws Exception {
-
-//    Working
     http
             .formLogin()
             .loginPage("/login");

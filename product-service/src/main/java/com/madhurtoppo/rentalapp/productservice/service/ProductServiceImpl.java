@@ -22,11 +22,7 @@ public class ProductServiceImpl implements ProductService {
   @Override
   public Product fetchById(int productId) {
     Optional<Product> product = productRepository.findById(productId);
-    if(product.isPresent()) {
-      return product.get();
-    } else {
-      return null;
-    }
+    return product.orElse(null);
   }
 
   @Override
@@ -38,4 +34,5 @@ public class ProductServiceImpl implements ProductService {
   public void delete(int productId) {
     productRepository.deleteById(productId);
   }
+
 }

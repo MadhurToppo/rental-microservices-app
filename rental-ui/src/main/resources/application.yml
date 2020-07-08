@@ -1,11 +1,11 @@
 server:
-  port: 7272
+  port: 7979
 
 spring:
   application:
-    name: customer-service
+    name: rent-client
   profiles:
     active: dev
 #    active: staging
-#    active: docker
+#    active: prod
 #    active: kubernetes

@@ -22,11 +22,7 @@ public class CustomerServiceImpl implements CustomerService {
   @Override
   public Customer fetchById(int customerId) {
     Optional<Customer> customer = customerRepository.findById(customerId);
-    if (customer.isPresent()) {
-      return customer.get();
-    } else {
-      return null;
-    }
+    return customer.orElse(null);
   }
 
   @Override

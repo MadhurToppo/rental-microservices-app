@@ -16,7 +16,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.time.Month;
 import java.util.*;
 
 @Service
@@ -72,8 +71,8 @@ public class RentServiceImpl implements RentService {
     RentedProduct rentedProduct = new RentedProduct();
 
 //    Refactor code to use constructor to create rentedProduct object
-    rentedProduct.setId(rent.getRentId());
-    rentedProduct.setProductId(product.getId());
+    rentedProduct.setRentId(rent.getRentId());
+    rentedProduct.setProductId(product.getProductId());
     rentedProduct.setMake(product.getMake());
     rentedProduct.setModel(product.getModel());
     rentedProduct.setType(product.getType());
@@ -81,36 +80,23 @@ public class RentServiceImpl implements RentService {
     rentedProduct.setYear(product.getYear());
 
     saveProduct(rentedProduct);
-//  rentedProductRepository.save(rentedProduct);
-//  Integer count = rentRepository.countByProductId(38);
-//  System.out.println("The count is: " + count);
     return rentRepository.save(rent);
   }
 
   @Override
   public Rent findById(int id) {
     Optional<Rent> rent = rentRepository.findById(id);
-    if (rent.isPresent())
-      return rent.get();
-    else
-      return new Rent();
+    return rent.orElseGet(Rent::new);
   }
 
   @Override
   public List<Map<String, Object>> getProductData() {
-    /**
-     * 1. Write a custom query to get count of individual models (in DB)
-     * 2. Create method in JPA Repository to get the items
-     */
-    List<Map<String, Object>> productCountMap = rentedProductRepository.findProductData();
-//    System.out.println("The product data is: " + productCountMap);
-    return productCountMap;
+    return rentedProductRepository.findProductData();
   }
 
   @Override
   public List<Map<String, Object>> getCityData() {
-    List<Map<String,Object>> cityCountMap = rentRepository.fetchCityData();
-    return cityCountMap;
+    return rentRepository.fetchCityData();
   }
 
   @Override
@@ -133,7 +119,6 @@ public class RentServiceImpl implements RentService {
     for (Rent rent : rentList) {
       detailResponseList.add(findDetailResponse(rentList.indexOf(rent)));
     }
-//    System.out.println("Detailed rent list is: " + detailResponseList);
     return detailResponseList;
   }
 
@@ -151,16 +136,14 @@ public class RentServiceImpl implements RentService {
     HttpHeaders httpHeaders = new HttpHeaders();
     httpHeaders.add("Authorization", AccessToken.getAccessToken());
     HttpEntity<Customer> customerHttpEntity = new HttpEntity<>(httpHeaders);
-    Customer customer = restTemplate.getForObject("http://localhost:7272/services/customers/" + customerId, Customer.class, customerHttpEntity);
-    return customer;
+    return restTemplate.getForObject("http://localhost:7272/services/customers/" + customerId, Customer.class, customerHttpEntity);
   }
 
   private Product getProduct(int productId) {
     HttpHeaders httpHeaders = new HttpHeaders();
     httpHeaders.add("Authorization", AccessToken.getAccessToken());
     HttpEntity<Product> productHttpEntity = new HttpEntity<>(httpHeaders);
-    Product product = restTemplate.getForObject("http://localhost:7373/services/product/" + productId, Product.class, productHttpEntity);
-    return product;
+    return restTemplate.getForObject("http://localhost:7373/services/product/" + productId, Product.class, productHttpEntity);
   }
 
 }

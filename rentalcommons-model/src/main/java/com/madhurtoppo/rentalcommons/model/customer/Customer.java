@@ -6,13 +6,13 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "customer")
+@Table(name = "Customer")
 @Data
 public class Customer {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  int id;
+  int customerId;
 
   private String firstName;
   private String lastName;

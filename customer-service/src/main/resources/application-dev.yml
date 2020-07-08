@@ -23,7 +23,7 @@ spring:
     kubernetes:
       enabled: false
   datasource:
-    url: jdbc:mysql://${environment.mysql-server.machine}:${environment.mysql-server.port}/rent_customerDB?allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true
+    url: jdbc:mysql://${environment.mysql-server.machine}:${environment.mysql-server.port}/CustomerDb?allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true
     username: root
     password: password
     initialization-mode: always

@@ -5,23 +5,18 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "rentedProduct")
+@Table(name = "RentedProduct")
 @Data
 public class RentedProduct {
 
   @Id
-//  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  int id;
+  int rentId;
 
   private int productId;
-
   private String make;
-
   private String model;
-
   private String type;
   private String category;
   private int year;
 
-//  private int count;
 }
