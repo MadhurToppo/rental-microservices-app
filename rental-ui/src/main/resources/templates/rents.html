@@ -33,8 +33,8 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <!--Data Tables css-->
-<!--  <link rel="stylesheet" type="text/css"-->
-<!--        href="https://cdn.datatables.net/v/bs4/dt-1.10.20/af-2.3.4/b-1.6.1/cr-1.5.2/fc-3.3.0/fh-3.1.6/sc-2.0.1/sp-1.0.1/sl-1.3.1/datatables.min.css"/>-->
+  <!--  <link rel="stylesheet" type="text/css"-->
+  <!--        href="https://cdn.datatables.net/v/bs4/dt-1.10.20/af-2.3.4/b-1.6.1/cr-1.5.2/fc-3.3.0/fh-3.1.6/sc-2.0.1/sp-1.0.1/sl-1.3.1/datatables.min.css"/>-->
   <link rel="stylesheet" type="text/css"
         href="https://cdn.datatables.net/v/bs4/dt-1.10.20/af-2.3.4/b-1.6.1/cr-1.5.2/fc-3.3.0/fh-3.1.6/sc-2.0.1/sp-1.0.1/sl-1.3.1/datatables.min.css"/>
   <!--  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />-->
@@ -195,7 +195,7 @@
                 <table id="rentsTable" class="table table-hover table-striped">
                   <thead>
                   <tr>
-                    <th>id</th>
+                    <th>Id</th>
                     <th>Customer Id</th>
                     <th>Product Id</th>
                     <th>Rent From</th>
@@ -393,6 +393,7 @@
           <script>
               document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
 
+
           </script>
           , Designed by <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by <a
           href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
@@ -419,7 +420,7 @@
             <label class="col-form-Label">Customer: </label>
             <select class="form-control" name="customerId">
               <option>-SELECT-</option>
-              <option th:each="customer: ${customers}" th:value="${customer.id}"
+              <option th:each="customer: ${customers}" th:value="${customer.customerId}"
                       th:text="${customer.firstName} + '&nbsp' + ${customer.lastName}"></option>
             </select>
           </div>
@@ -428,7 +429,7 @@
             <label class="col-form-Label">Product: </label>
             <select class="form-control" name="productId">
               <option>-SELECT-</option>
-              <option th:each="product: ${products}" th:value="${product.id}"
+              <option th:each="product: ${products}" th:value="${product.productId}"
                       th:text="${product.make} + '&nbsp' + ${product.model}"></option>
             </select>
           </div>

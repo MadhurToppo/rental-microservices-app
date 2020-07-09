@@ -7,7 +7,7 @@ $('document').ready(function(){
     var href = $(this).attr('href');
     $.get(href, function(customer, status){
   //        alert("Customer is: " + customer);
-      $('#idEdit').val(customer.id);
+      $('#idEdit').val(customer.customerId);
       $('#firstNameEdit').val(customer.firstName);
       $('#lastNameEdit').val(customer.lastName);
       $('#idNumberEdit').val(customer.idNumber);

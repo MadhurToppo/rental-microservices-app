@@ -197,7 +197,7 @@ Manage Customers  </title>
                 <table id="customerTable" class="table table-hover table-striped">
                   <thead>
                   <tr>
-                    <th>id</th>
+                    <th>Id</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>ID Number</th>
@@ -210,7 +210,7 @@ Manage Customers  </title>
 
                   <tbody>
                   <tr th:each="customer: ${customers}">
-                    <td><span th:text="${customer.id}"></span></td>
+                    <td><span th:text="${customer.customerId}"></span></td>
                     <td><span th:text="${customer.firstName}"></span></td>
                     <td><span th:text="${customer.lastName}"></span></td>
                     <td><span th:text="${customer.idNumber}"></span></td>
@@ -219,10 +219,10 @@ Manage Customers  </title>
                     <td><span th:text="${customer.phoneNumber}"></span></td>
                     <td>
                       <div class="btn-group">
-                        <a th:href="@{/customer/{id}(id=${customer.id})}" class="btn btn-primary" id="editButton"
+                        <a th:href="@{/customer/{id}(id=${customer.customerId})}" class="btn btn-primary" id="editButton"
                            data-toggle="tooltip" title="Edit"><i
                           class="icon_pencil-edit"></i></a>
-                        <a th:href="@{/customer/delete/{id}(id=${customer.id})}" class="btn btn-danger"
+                        <a th:href="@{/customer/delete/{id}(id=${customer.customerId})}" class="btn btn-danger"
                            id="deleteButton"
                            data-toggle="tooltip" title="Delete"><i
                           class="icon_close_alt2"></i></a>

@@ -13,6 +13,7 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
   protected void configure(HttpSecurity http) throws Exception {
     http
             .authorizeRequests()
+            .antMatchers("/actuator/**").permitAll()
             .anyRequest()
             .authenticated()
             .and()
@@ -20,10 +21,6 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
             .logoutUrl("/logout")
             .invalidateHttpSession(true)
             .deleteCookies("KSESSION");
-
-//    http
-//            .csrf()
-//            .disable();
   }
 
 }

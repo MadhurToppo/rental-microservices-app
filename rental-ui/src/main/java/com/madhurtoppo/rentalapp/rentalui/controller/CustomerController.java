@@ -23,6 +23,7 @@ public class CustomerController {
 
   /**
    * Method to get Http header with Authorization Access Token
+   *
    * @return
    */
   public HttpHeaders loadHttpHeaders() {
@@ -30,6 +31,7 @@ public class CustomerController {
     httpHeaders.add("Authorization", AccessToken.getAccessToken());
     return httpHeaders;
   }
+
   /**
    * Method to display the list of Customers
    *
@@ -80,8 +82,7 @@ public class CustomerController {
   @ResponseBody
   public ResponseEntity<Customer> findById(@PathVariable int id) {
     HttpEntity<Customer> customerHttpEntity = new HttpEntity<>(AccessToken.getHttpHeaders());
-    ResponseEntity<Customer> responseEntity = restTemplate.exchange("http://customer-service/services/customer/" + id, HttpMethod.GET, customerHttpEntity, Customer.class);
-    return responseEntity;
+    return restTemplate.exchange("http://customer-service/services/customer/" + id, HttpMethod.GET, customerHttpEntity, Customer.class);
   }
 
   /**

@@ -8,7 +8,7 @@ $('document').ready(function(){
   //event.stopPropagation();
     var href = $(this).attr('href');
     $.get(href, function(product, status){
-      $('#idEdit').val(product.id);
+      $('#idEdit').val(product.productId);
       $('#makeEdit').val(product.make);
       $('#modelEdit').val(product.model);
       $('#typeEdit').val(product.type);

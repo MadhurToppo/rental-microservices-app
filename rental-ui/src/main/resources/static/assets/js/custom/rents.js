@@ -24,7 +24,7 @@ $('document').ready(function(){
     event.preventDefault();
     var href = $(this).attr('href');
     $.get(href, function(customer, status){
-      $('#idEdit').val(customer.id);
+      $('#idEdit').val(customer.customerId);
       $('#firstNameEdit').val(customer.firstName);
       $('#lastNameEdit').val(customer.lastName);
       $('#idNumberEdit').val(customer.idNumber);
@@ -39,7 +39,7 @@ $('document').ready(function(){
     event.preventDefault();
     var href = $(this).attr('href');
     $.get(href, function(product, status){
-      $('#productId').val(product.id);
+      $('#productId').val(product.productId);
       $('#makeEdit').val(product.make);
       $('#modelEdit').val(product.model);
       $('#typeEdit').val(product.type);

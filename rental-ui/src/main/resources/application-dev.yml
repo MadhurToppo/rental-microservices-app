@@ -7,7 +7,7 @@ environment:
 
 eureka:
   instance:
-    instance-id: ${spring.application.name}
+    instance-id: ${spring.application.name}-${random.int}
     hostname: ${environment.machine}
   client:
     register-with-eureka: true

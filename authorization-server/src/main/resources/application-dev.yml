@@ -1,3 +1,5 @@
+database: mysql
+
 environment:
   discovery-server:
     port: 8761
