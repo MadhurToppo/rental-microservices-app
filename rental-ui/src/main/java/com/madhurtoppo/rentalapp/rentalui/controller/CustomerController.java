@@ -1,7 +1,6 @@
 package com.madhurtoppo.rentalapp.rentalui.controller;
 
 import com.madhurtoppo.rentalapp.rentalui.config.AccessToken;
-import com.madhurtoppo.rentalapp.rentalui.config.IPAddress;
 import com.madhurtoppo.rentalcommons.model.customer.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
