@@ -6,6 +6,6 @@ spring:
     name: customer-service
   profiles:
     active: dev
-#    active: staging
 #    active: docker
 #    active: kubernetes
+#    active: prod
