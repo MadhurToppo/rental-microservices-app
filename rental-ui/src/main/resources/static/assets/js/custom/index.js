@@ -319,7 +319,7 @@ initDashboardPageCharts: function() {
       var cameraCountData = [];
 
       $.each(data, function(index) {
-        if (data[index].category == "Camera Lenses") {
+        if (data[index].category == "Lenses") {
           lensLabelData.push(data[index].model);
           lensCountData.push(data[index].count);
         } else if (data[index].category == "Digital Cameras") {
