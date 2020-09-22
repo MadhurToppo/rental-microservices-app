@@ -14,7 +14,6 @@ import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 
 @Controller
-//@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class CustomerController {
 
   @Autowired
@@ -113,5 +112,4 @@ public class CustomerController {
     ResponseEntity<Customer> responseEntity = restTemplate.exchange("http://customer-service/services/customer/delete/" + id, HttpMethod.DELETE, customerHttpEntity, Customer.class);
     return "redirect:/customers";
   }
-
 }

@@ -14,7 +14,6 @@ import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 
 @Controller
-//@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ProductController {
 
   @Autowired
