@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-
+/***
+ * @author Madhur Toppo
+ */
 public class AuthUserDetail extends User implements UserDetails {
 
   public AuthUserDetail(User user) {
@@ -22,9 +24,9 @@ public class AuthUserDetail extends User implements UserDetails {
 
     getRoles().forEach(role -> {
       grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
-      role.getPermissions().forEach(permission -> {
-        grantedAuthorities.add(new SimpleGrantedAuthority(permission.getName()));
-      });
+      role.getPermissions().forEach(permission ->
+        grantedAuthorities.add(new SimpleGrantedAuthority(permission.getName()))
+      );
 
     });
     return grantedAuthorities;

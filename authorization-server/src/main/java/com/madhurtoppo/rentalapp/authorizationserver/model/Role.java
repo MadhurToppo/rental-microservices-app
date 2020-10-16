@@ -5,6 +5,10 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
+/***
+ * @author Madhur Toppo
+ */
+
 @Entity
 @Table(name = "role")
 @Data
