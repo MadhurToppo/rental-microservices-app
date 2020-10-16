@@ -5,14 +5,18 @@ import lombok.Data;
 import javax.persistence.*;
 import java.io.Serializable;
 
+/***
+ * @author Madhur Toppo
+ */
+
 @Entity
 @Table(name = "permission")
 @Data
 public class Permission implements Serializable {
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private Integer id;
-  @Column(name = "name")
-  private String name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+    @Column(name = "name")
+    private String name;
 }
 

@@ -11,33 +11,35 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+/***
+ * @author Madhur Toppo
+ */
 @Configuration
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-//  New Code Function
-  @Override
-  protected void configure(HttpSecurity http) throws Exception {
-    http
-            .formLogin()
-            .loginPage("/login");
-  }
+    //  New Code Function
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+                .formLogin()
+                .loginPage("/login");
+    }
 
-  @Autowired
-  private UserDetailsService userDetailsService;
+    @Autowired
+    private UserDetailsService userDetailsService;
 
-  @Bean
-  protected AuthenticationManager getAuthenticationManager() throws Exception {
-    return super.authenticationManagerBean();
-  }
+    @Bean
+    protected AuthenticationManager getAuthenticationManager() throws Exception {
+        return super.authenticationManagerBean();
+    }
 
-  @Bean
-  PasswordEncoder passwordEncoder() {
-    return PasswordEncoderFactories.createDelegatingPasswordEncoder();
-  }
+    @Bean
+    PasswordEncoder passwordEncoder() {
+        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
+    }
 
-  @Override
-  protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-    auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
-  }
-
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+    }
 }

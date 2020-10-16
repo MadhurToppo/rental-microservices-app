@@ -5,6 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 
+/***
+ * @author Madhur Toppo
+ */
 @SpringBootApplication
 @EnableAuthorizationServer
 @EnableDiscoveryClient

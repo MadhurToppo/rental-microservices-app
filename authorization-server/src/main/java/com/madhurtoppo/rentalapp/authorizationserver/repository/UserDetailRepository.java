@@ -5,8 +5,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
+/***
+ * @author Madhur Toppo
+ */
 public interface UserDetailRepository extends JpaRepository<User, Integer> {
 
-  Optional<User> findByUsername(String name);
+    Optional<User> findByUsername(String name);
 
 }
