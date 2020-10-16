@@ -4,6 +4,9 @@ import com.madhurtoppo.rentalcommons.model.customer.Customer;
 
 import java.util.List;
 
+/***
+ * @author Madhur Toppo
+ */
 public interface CustomerService {
 
   Customer save(Customer customer);
