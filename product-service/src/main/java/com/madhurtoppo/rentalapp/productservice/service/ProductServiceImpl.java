@@ -8,31 +8,34 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/***
+ * @author Madhur Toppo
+ */
 @Service
 public class ProductServiceImpl implements ProductService {
 
-  @Autowired
-  ProductRepository productRepository;
+    @Autowired
+    ProductRepository productRepository;
 
-  @Override
-  public Product save(Product product) {
-    return productRepository.save(product);
-  }
+    @Override
+    public Product save(Product product) {
+        return productRepository.save(product);
+    }
 
-  @Override
-  public Product fetchById(int productId) {
-    Optional<Product> product = productRepository.findById(productId);
-    return product.orElse(null);
-  }
+    @Override
+    public Product fetchById(int productId) {
+        Optional<Product> product = productRepository.findById(productId);
+        return product.orElse(null);
+    }
 
-  @Override
-  public List<Product> fetchAllProducts() {
-    return productRepository.findAll();
-  }
+    @Override
+    public List<Product> fetchAllProducts() {
+        return productRepository.findAll();
+    }
 
-  @Override
-  public void delete(int productId) {
-    productRepository.deleteById(productId);
-  }
+    @Override
+    public void delete(int productId) {
+        productRepository.deleteById(productId);
+    }
 
 }
