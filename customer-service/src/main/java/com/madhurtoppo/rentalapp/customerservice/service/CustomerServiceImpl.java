@@ -14,27 +14,27 @@ import java.util.Optional;
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
-  @Autowired
-  CustomerRepository customerRepository;
+    @Autowired
+    CustomerRepository customerRepository;
 
-  @Override
-  public Customer save(Customer customer) {
-    return customerRepository.save(customer);
-  }
+    @Override
+    public Customer save(Customer customer) {
+        return customerRepository.save(customer);
+    }
 
-  @Override
-  public Customer fetchById(int customerId) {
-    Optional<Customer> customer = customerRepository.findById(customerId);
-    return customer.orElse(null);
-  }
+    @Override
+    public Customer fetchById(int customerId) {
+        Optional<Customer> customer = customerRepository.findById(customerId);
+        return customer.orElse(null);
+    }
 
-  @Override
-  public List<Customer> fetchAllProfiles() {
-    return customerRepository.findAll();
-  }
+    @Override
+    public List<Customer> fetchAllProfiles() {
+        return customerRepository.findAll();
+    }
 
-  @Override
-  public void delete(int customerId) {
-    customerRepository.deleteById(customerId);
-  }
+    @Override
+    public void delete(int customerId) {
+        customerRepository.deleteById(customerId);
+    }
 }

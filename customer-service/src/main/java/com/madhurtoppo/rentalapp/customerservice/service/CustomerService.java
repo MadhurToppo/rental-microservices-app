@@ -9,11 +9,11 @@ import java.util.List;
  */
 public interface CustomerService {
 
-  Customer save(Customer customer);
+    Customer save(Customer customer);
 
-  Customer fetchById(int customerId);
+    Customer fetchById(int customerId);
 
-  List<Customer> fetchAllProfiles();
+    List<Customer> fetchAllProfiles();
 
-  void delete(int customerId);
+    void delete(int customerId);
 }
