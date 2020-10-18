@@ -4,6 +4,9 @@ import com.madhurtoppo.rentalcommons.model.customer.Customer;
 import com.madhurtoppo.rentalcommons.model.product.Product;
 import com.madhurtoppo.rentalcommons.model.rent.Rent;
 
+/***
+ * @author Madhur Toppo
+ */
 public class DetailResponse implements Response {
 
   Rent rent;

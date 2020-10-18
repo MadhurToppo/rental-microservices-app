@@ -13,61 +13,64 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 
+/***
+ * @author Madhur Toppo
+ */
 @Controller
 public class ProductController {
 
-  @Autowired
-  RestTemplate restTemplate;
+    @Autowired
+    RestTemplate restTemplate;
 
-  @GetMapping(value = "/products")
-  public String loadProducts(Model model) {
-    HttpEntity<Product> productHttpEntity = new HttpEntity<>(AccessToken.getHttpHeaders());
-    try {
-      ResponseEntity<Product[]> responseEntity = restTemplate.exchange("http://product-service/services/products", HttpMethod.GET, productHttpEntity, Product[].class);
-      model.addAttribute("products", responseEntity.getBody());
-    } catch (HttpStatusCodeException e) {
-      ResponseEntity responseEntity = ResponseEntity.status(e.getRawStatusCode()).headers(e.getResponseHeaders()).body(e.getResponseBodyAsString());
-      model.addAttribute("error", responseEntity);
+    @GetMapping(value = "/products")
+    public String loadProducts(Model model) {
+        HttpEntity<Product> productHttpEntity = new HttpEntity<>(AccessToken.getHttpHeaders());
+        try {
+            ResponseEntity<Product[]> responseEntity = restTemplate.exchange("http://product-service/services/products", HttpMethod.GET, productHttpEntity, Product[].class);
+            model.addAttribute("products", responseEntity.getBody());
+        } catch (HttpStatusCodeException e) {
+            ResponseEntity responseEntity = ResponseEntity.status(e.getRawStatusCode()).headers(e.getResponseHeaders()).body(e.getResponseBodyAsString());
+            model.addAttribute("error", responseEntity);
+        }
+        return "products";
     }
-    return "products";
-  }
 
-  @PostMapping(value = "/products/addNew")
-  public String addNew(Product product) {
-    HttpEntity<Product> productHttpEntity = new HttpEntity<>(product, AccessToken.getHttpHeaders());
-    try {
-      ResponseEntity<Product> responseEntity = restTemplate.exchange("http://product-service/services/product", HttpMethod.POST, productHttpEntity, Product.class);
-    } catch (HttpStatusCodeException e) {
-      ResponseEntity responseEntity = ResponseEntity.status(e.getRawStatusCode()).headers(e.getResponseHeaders()).body(e.getResponseBodyAsString());
+    @PostMapping(value = "/products/addNew")
+    public String addNew(Product product) {
+        HttpEntity<Product> productHttpEntity = new HttpEntity<>(product, AccessToken.getHttpHeaders());
+        try {
+            ResponseEntity<Product> responseEntity = restTemplate.exchange("http://product-service/services/product", HttpMethod.POST, productHttpEntity, Product.class);
+        } catch (HttpStatusCodeException e) {
+            ResponseEntity responseEntity = ResponseEntity.status(e.getRawStatusCode()).headers(e.getResponseHeaders()).body(e.getResponseBodyAsString());
+        }
+        return "redirect:/products";
     }
-    return "redirect:/products";
-  }
 
-  @GetMapping("/product/{id}")
-  @ResponseBody
-  public ResponseEntity<Product> findById(@PathVariable int id) {
-    HttpEntity<Product> productHttpEntity = new HttpEntity<>(AccessToken.getHttpHeaders());
-    ResponseEntity<Product> responseEntity = restTemplate.exchange("http://product-service/services/product/" + id, HttpMethod.GET, productHttpEntity, Product.class);
-    return responseEntity;
-  }
-
-  @RequestMapping(value = "/products/update", method = {RequestMethod.PUT, RequestMethod.GET})
-  public String update(Product product) {
-    HttpEntity<Product> productHttpEntity = new HttpEntity<>(product, AccessToken.getHttpHeaders());
-    try {
-      ResponseEntity<Product> responseEntity = restTemplate.exchange("http://product-service/services/product", HttpMethod.POST, productHttpEntity, Product.class);
-    } catch (HttpStatusCodeException e) {
-      ResponseEntity responseEntity = ResponseEntity.status(e.getRawStatusCode()).headers(e.getResponseHeaders()).body(e.getResponseBodyAsString());
+    @GetMapping("/product/{id}")
+    @ResponseBody
+    public ResponseEntity<Product> findById(@PathVariable int id) {
+        HttpEntity<Product> productHttpEntity = new HttpEntity<>(AccessToken.getHttpHeaders());
+        ResponseEntity<Product> responseEntity = restTemplate.exchange("http://product-service/services/product/" + id, HttpMethod.GET, productHttpEntity, Product.class);
+        return responseEntity;
     }
-    return "redirect:/products";
-  }
 
-  @RequestMapping(value = "/product/delete/{id}", method = {RequestMethod.DELETE, RequestMethod.GET})
+    @RequestMapping(value = "/products/update", method = {RequestMethod.PUT, RequestMethod.GET})
+    public String update(Product product) {
+        HttpEntity<Product> productHttpEntity = new HttpEntity<>(product, AccessToken.getHttpHeaders());
+        try {
+            ResponseEntity<Product> responseEntity = restTemplate.exchange("http://product-service/services/product", HttpMethod.POST, productHttpEntity, Product.class);
+        } catch (HttpStatusCodeException e) {
+            ResponseEntity responseEntity = ResponseEntity.status(e.getRawStatusCode()).headers(e.getResponseHeaders()).body(e.getResponseBodyAsString());
+        }
+        return "redirect:/products";
+    }
+
+    @RequestMapping(value = "/product/delete/{id}", method = {RequestMethod.DELETE, RequestMethod.GET})
 //  @ResponseBody
-  public String delete(@PathVariable int id) {
-    HttpEntity<Product> productHttpEntity = new HttpEntity<>(AccessToken.getHttpHeaders());
-    ResponseEntity<Product> responseEntity = restTemplate.exchange("http://product-service/services/product/delete/" + id, HttpMethod.DELETE, productHttpEntity, Product.class);
-    return "redirect:/products";
-  }
+    public String delete(@PathVariable int id) {
+        HttpEntity<Product> productHttpEntity = new HttpEntity<>(AccessToken.getHttpHeaders());
+        ResponseEntity<Product> responseEntity = restTemplate.exchange("http://product-service/services/product/delete/" + id, HttpMethod.DELETE, productHttpEntity, Product.class);
+        return "redirect:/products";
+    }
 
 }

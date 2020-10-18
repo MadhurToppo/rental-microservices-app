@@ -2,19 +2,22 @@ package com.madhurtoppo.rentalapp.rentalui.model;
 
 import com.madhurtoppo.rentalcommons.model.rent.Rent;
 
+/***
+ * @author Madhur Toppo
+ */
 public class SimpleResponse implements Response {
 
-  Rent rent;
+    Rent rent;
 
-  public SimpleResponse(Rent rent) {
-    this.rent = rent;
-  }
+    public SimpleResponse(Rent rent) {
+        this.rent = rent;
+    }
 
-  public Rent getRent() {
-    return rent;
-  }
+    public Rent getRent() {
+        return rent;
+    }
 
-  public void setRent(Rent rent) {
-    this.rent = rent;
-  }
+    public void setRent(Rent rent) {
+        this.rent = rent;
+    }
 }

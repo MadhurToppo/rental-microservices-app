@@ -8,21 +8,24 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+/***
+ * @author Madhur Toppo
+ */
 @Controller
 //@RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ApplicationController {
 
-  @Autowired
-  RestTemplate restTemplate;
+    @Autowired
+    RestTemplate restTemplate;
 
-  @GetMapping("/index")
-  public String goHome() {
-    return "index";
-  }
+    @GetMapping("/index")
+    public String goHome() {
+        return "index";
+    }
 
-  @PostMapping("/logout")
-  public void logout() {
-  }
+    @PostMapping("/logout")
+    public void logout() {
+    }
 
 }
