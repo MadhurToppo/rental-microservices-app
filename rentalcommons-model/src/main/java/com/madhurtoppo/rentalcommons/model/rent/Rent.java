@@ -6,24 +6,27 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+/***
+ * @author Madhur Toppo
+ */
 @Entity
 @Table(name = "Rent")
 @Data
 public class Rent {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  int rentId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int rentId;
 
-  private int customerId;
-  private int productId;
+    private int customerId;
+    private int productId;
 
-  @DateTimeFormat(pattern = "yyyy-MM-dd")
-  private LocalDate rentFrom;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate rentFrom;
 
-  @DateTimeFormat(pattern = "yyyy-MM-dd")
-  private LocalDate rentTill;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate rentTill;
 
-  private String rentLocation;
+    private String rentLocation;
 
 }

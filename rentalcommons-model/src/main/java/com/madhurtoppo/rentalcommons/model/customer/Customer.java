@@ -5,23 +5,26 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+/***
+ * @author Madhur Toppo
+ */
 @Entity
 @Table(name = "Customer")
 @Data
 public class Customer {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  int customerId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int customerId;
 
-  private String firstName;
-  private String lastName;
+    private String firstName;
+    private String lastName;
 
-  @DateTimeFormat(pattern = "yyyy-MM-dd")
-  private LocalDate dateOfBirth;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate dateOfBirth;
 
-  private String idNumber;
-  private String address;
-  private String phoneNumber;
+    private String idNumber;
+    private String address;
+    private String phoneNumber;
 
 }
