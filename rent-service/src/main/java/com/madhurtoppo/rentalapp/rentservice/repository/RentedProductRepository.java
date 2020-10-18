@@ -7,9 +7,12 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 import java.util.Map;
 
+/***
+ * @author Madhur Toppo
+ */
 public interface RentedProductRepository extends JpaRepository<RentedProduct, Integer> {
 
-  @Query("SELECT NEW map(model as model, category as category, COUNT(DISTINCT id) as count) FROM RentedProduct group by model, category")
-  List<Map<String, Object>> findProductData();
+    @Query("SELECT NEW map(model as model, category as category, COUNT(DISTINCT id) as count) FROM RentedProduct group by model, category")
+    List<Map<String, Object>> findProductData();
 
 }

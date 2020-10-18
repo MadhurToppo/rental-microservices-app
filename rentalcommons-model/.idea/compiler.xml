@@ -7,13 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="discovery-service" />
-        <module name="rent-service" />
-        <module name="product-service" />
         <module name="authorization-server" />
         <module name="customer-service" />
-        <module name="rentalcommons-model" />
         <module name="rental-ui" />
+        <module name="rentalcommons-model" />
+        <module name="product-service" />
+        <module name="discovery-service" />
+        <module name="rent-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

@@ -10,51 +10,54 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 import java.util.Map;
 
+/***
+ * @author Madhur Toppo
+ */
 @RestController
 @RequestMapping("/services/rents")
 public class RentController {
 
-  @Autowired
-  RentService rentService;
+    @Autowired
+    RentService rentService;
 
-  @Autowired
-  RestTemplate restTemplate;
+    @Autowired
+    RestTemplate restTemplate;
 
-  @GetMapping
-  @PreAuthorize("hasRole('ROLE_admin')")
-  public List<Rent> getAllRents() {
-    return rentService.findAll();
-  }
+    @GetMapping
+    @PreAuthorize("hasRole('ROLE_admin')")
+    public List<Rent> getAllRents() {
+        return rentService.findAll();
+    }
 
-  @PostMapping
-  public Rent save(@RequestBody Rent rent) {
-    return rentService.save(rent);
-  }
+    @PostMapping
+    public Rent save(@RequestBody Rent rent) {
+        return rentService.save(rent);
+    }
 
-  @GetMapping(value = "/{profileId}")
-  public Rent fetch(@PathVariable int profileId) {
-    return rentService.findById(profileId);
-  }
+    @GetMapping(value = "/{profileId}")
+    public Rent fetch(@PathVariable int profileId) {
+        return rentService.findById(profileId);
+    }
 
-  @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
-  //@PreAuthorize("hasRole('ROLE_admin')")
-  public void delete(@PathVariable int id) {
-    rentService.delete(id);
-  }
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+    //@PreAuthorize("hasRole('ROLE_admin')")
+    public void delete(@PathVariable int id) {
+        rentService.delete(id);
+    }
 
-  @GetMapping(value = "/monthData")
-  public Map<String, Integer> monthlyData() {
-    return rentService.getMonthlyData();
-  }
+    @GetMapping(value = "/monthData")
+    public Map<String, Integer> monthlyData() {
+        return rentService.getMonthlyData();
+    }
 
-  @GetMapping(value = "/productData")
-  public List<Map<String, Object>> productData() {
-    return rentService.getProductData();
-  }
+    @GetMapping(value = "/productData")
+    public List<Map<String, Object>> productData() {
+        return rentService.getProductData();
+    }
 
-  @GetMapping(value = "/cityData")
-  public List<Map<String, Object>> cityData() {
-    return rentService.getCityData();
-  }
+    @GetMapping(value = "/cityData")
+    public List<Map<String, Object>> cityData() {
+        return rentService.getCityData();
+    }
 
 }

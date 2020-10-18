@@ -4,19 +4,22 @@ import lombok.Data;
 
 import javax.persistence.*;
 
+/***
+ * @author Madhur Toppo
+ */
 @Entity
 @Table(name = "RentedProduct")
 @Data
 public class RentedProduct {
 
-  @Id
-  int rentId;
+    @Id
+    int rentId;
 
-  private int productId;
-  private String make;
-  private String model;
-  private String type;
-  private String category;
-  private int year;
+    private int productId;
+    private String make;
+    private String model;
+    private String type;
+    private String category;
+    private int year;
 
 }
