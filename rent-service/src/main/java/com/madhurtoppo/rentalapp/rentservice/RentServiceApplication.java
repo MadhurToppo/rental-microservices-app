@@ -7,7 +7,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 
 /***
+ * Rent service for customer to product rental information
  * @author Madhur Toppo
+ * @version 1.0
+ * @since 28 March 2020
  */
 @SpringBootApplication
 @EntityScan(basePackages = {"com.madhurtoppo.rentalcommons.model.rent", "com.madhurtoppo.rentalapp.rentservice.model"})
