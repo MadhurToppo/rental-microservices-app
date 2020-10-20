@@ -7,14 +7,16 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 
 /***
  * @author Madhur Toppo
+ * @version 1.0
+ * @since 28 March 2020
  */
 @SpringBootApplication
 @EnableAuthorizationServer
 @EnableDiscoveryClient
 public class AuthorizationServerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AuthorizationServerApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(AuthorizationServerApplication.class, args);
+    }
 
 }
