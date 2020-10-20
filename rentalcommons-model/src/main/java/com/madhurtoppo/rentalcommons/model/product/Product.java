@@ -5,6 +5,7 @@ import javax.persistence.*;
 
 /***
  * @author Madhur Toppo
+ * @since 28 March 2020
  */
 @Entity
 @Table(name = "Product")
