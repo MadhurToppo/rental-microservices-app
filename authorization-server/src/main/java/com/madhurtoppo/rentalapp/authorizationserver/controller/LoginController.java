@@ -5,8 +5,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /***
  * @author Madhur Toppo
- * @version 1.0
- * @since 28 March 2020
  */
 @Controller
 public class LoginController {
