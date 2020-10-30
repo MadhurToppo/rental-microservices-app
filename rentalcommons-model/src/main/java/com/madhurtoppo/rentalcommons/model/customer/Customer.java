@@ -8,7 +8,6 @@ import java.time.LocalDate;
 /***
  * @author Madhur Toppo
  * @version 1.0
- * @since 28 March 2020
  */
 @Entity
 @Table(name = "Customer")
