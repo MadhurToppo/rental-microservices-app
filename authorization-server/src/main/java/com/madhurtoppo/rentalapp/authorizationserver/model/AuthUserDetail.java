@@ -10,6 +10,7 @@ import java.util.List;
 
 /***
  * @author Madhur Toppo
+ * @version 1.0
  */
 public class AuthUserDetail extends User implements UserDetails {
 
