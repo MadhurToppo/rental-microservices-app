@@ -16,6 +16,7 @@ import javax.sql.DataSource;
 
 /***
  * @author Madhur Toppo
+ * @version 1.0
  */
 @Configuration
 public class AuthorizationServerConfiguration implements AuthorizationServerConfigurer {
