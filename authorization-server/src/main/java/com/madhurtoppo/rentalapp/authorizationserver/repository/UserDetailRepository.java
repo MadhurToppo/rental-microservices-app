@@ -7,6 +7,7 @@ import java.util.Optional;
 
 /***
  * @author Madhur Toppo
+ * @version 1.0
  */
 public interface UserDetailRepository extends JpaRepository<User, Integer> {
 
