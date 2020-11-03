@@ -14,6 +14,7 @@ import java.util.Optional;
 
 /***
  * @author Madhur Toppo
+ * @version 1.0
  */
 @Service("userDetailsService")
 public class UserDetailServiceImpl  implements UserDetailsService {
