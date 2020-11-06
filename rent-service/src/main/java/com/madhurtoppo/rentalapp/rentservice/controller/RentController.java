@@ -12,6 +12,7 @@ import java.util.Map;
 
 /***
  * @author Madhur Toppo
+ * @version 1.0
  */
 @RestController
 @RequestMapping("/services/rents")
