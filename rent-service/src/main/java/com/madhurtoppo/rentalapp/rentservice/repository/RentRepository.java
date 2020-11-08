@@ -9,6 +9,7 @@ import java.util.Map;
 
 /***
  * @author Madhur Toppo
+ * @version 1.0
  */
 public interface RentRepository extends JpaRepository<Rent, Integer> {
     Integer countByProductId(Integer productId);
