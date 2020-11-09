@@ -20,6 +20,7 @@ import java.util.*;
 
 /***
  * @author Madhur Toppo
+ * @version 1.0
  */
 @Service
 public class RentServiceImpl implements RentService {
