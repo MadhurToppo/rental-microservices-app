@@ -8,8 +8,6 @@ environment:
     machine: 127.0.0.1
     port: 3306
 
-
-
 eureka:
   instance:
     instance-id: ${spring.application.name}-${random.int}

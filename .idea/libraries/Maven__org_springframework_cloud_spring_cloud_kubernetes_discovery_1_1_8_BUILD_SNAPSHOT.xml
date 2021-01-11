@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.springframework.cloud:spring-cloud-kubernetes-discovery:1.1.8.BUILD-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-kubernetes-discovery/1.1.8.BUILD-SNAPSHOT/spring-cloud-kubernetes-discovery-1.1.8.BUILD-20210111.013331-65.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-kubernetes-discovery/1.1.8.BUILD-SNAPSHOT/spring-cloud-kubernetes-discovery-1.1.8.BUILD-20210111.013331-65-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-kubernetes-discovery/1.1.8.BUILD-SNAPSHOT/spring-cloud-kubernetes-discovery-1.1.8.BUILD-20210111.013331-65-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

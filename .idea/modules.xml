@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Projects.iml" filepath="$PROJECT_DIR$/.idea/Projects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/authorization-server/authorization-server.iml" filepath="$PROJECT_DIR$/authorization-server/authorization-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/customer-service/customer-service.iml" filepath="$PROJECT_DIR$/customer-service/customer-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/discovery-service/discovery-service.iml" filepath="$PROJECT_DIR$/discovery-service/discovery-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/product-service/product-service.iml" filepath="$PROJECT_DIR$/product-service/product-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rent-service/rent-service.iml" filepath="$PROJECT_DIR$/rent-service/rent-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rental-ui/rental-ui.iml" filepath="$PROJECT_DIR$/rental-ui/rental-ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rentalcommons-model/rentalcommons-model.iml" filepath="$PROJECT_DIR$/rentalcommons-model/rentalcommons-model.iml" />
+    </modules>
+  </component>
+</project>
