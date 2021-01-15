@@ -6,6 +6,7 @@ import org.springframework.security.oauth2.provider.authentication.OAuth2Authent
 
 /***
  * @author Madhur Toppo
+ * @since 28 March 2020
  */
 public class AccessToken {
 
