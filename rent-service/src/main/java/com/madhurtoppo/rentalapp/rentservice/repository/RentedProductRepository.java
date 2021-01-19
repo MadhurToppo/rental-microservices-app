@@ -9,7 +9,7 @@ import java.util.Map;
 
 /***
  * @author Madhur Toppo
- * @version 1.0
+ * @since 28 March 2020
  */
 public interface RentedProductRepository extends JpaRepository<RentedProduct, Integer> {
 
