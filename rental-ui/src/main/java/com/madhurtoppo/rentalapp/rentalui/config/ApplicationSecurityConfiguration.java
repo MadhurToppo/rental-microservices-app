@@ -7,7 +7,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 /***
  * @author Madhur Toppo
- * @since 28 March 2020
+ * @since 15 March 2020
  */
 @Configuration
 @EnableOAuth2Sso
