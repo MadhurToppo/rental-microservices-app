@@ -7,6 +7,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 /***
  * @author Madhur Toppo
+ * @version 1.0
  * @since 15 March 2020
  */
 @Configuration
