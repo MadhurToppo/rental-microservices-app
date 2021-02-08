@@ -4,7 +4,6 @@ import com.madhurtoppo.rentalapp.rentalui.config.AccessToken;
 import com.madhurtoppo.rentalcommons.model.product.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
