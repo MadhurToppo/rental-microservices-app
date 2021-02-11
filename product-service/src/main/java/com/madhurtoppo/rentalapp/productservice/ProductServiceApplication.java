@@ -10,7 +10,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
  * Product service for camera models and accessories
  * @author Madhur Toppo
  * @version 1.0
- * @since 28 March 2020
+ * @since 15 March 2020
  */
 @SpringBootApplication
 @EntityScan(basePackages = "com.madhurtoppo.rentalcommons.model.product")
