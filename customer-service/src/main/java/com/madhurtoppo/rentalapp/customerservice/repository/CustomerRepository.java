@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 /***
  * @author Madhur Toppo
  * @since 15 March 2020
- * @version 1.0
  */
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 }
