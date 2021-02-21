@@ -22,7 +22,6 @@ import java.util.Map;
 /***
  * @author Madhur Toppo
  * @since 15 March 2020
- * @version 1.0
  */
 @Controller
 //@CrossOrigin(origins = "*", allowedHeaders = "*")
