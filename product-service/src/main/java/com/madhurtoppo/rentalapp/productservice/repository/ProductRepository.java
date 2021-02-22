@@ -5,7 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 /***
  * @author Madhur Toppo
- * @version 1.0
  * @since 15 March 2020
  */
 public interface ProductRepository extends JpaRepository<Product, Integer> {
