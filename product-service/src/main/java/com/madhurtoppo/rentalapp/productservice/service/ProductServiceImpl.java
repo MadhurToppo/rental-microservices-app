@@ -10,7 +10,6 @@ import java.util.Optional;
 
 /***
  * @author Madhur Toppo
- * @version 1.0
  * @since 15 March 2020
  *
  */
