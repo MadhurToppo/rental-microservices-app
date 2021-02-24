@@ -6,7 +6,7 @@ import com.madhurtoppo.rentalcommons.model.rent.Rent;
 
 /***
  * @author Madhur Toppo
- * @since 28 March 2020
+ * @since 15 March 2020
  */
 public class DetailResponse implements Response {
 
