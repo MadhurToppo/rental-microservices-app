@@ -7,9 +7,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 /***
  * Rent UI Client for Products Rental Application
  * @author Madhur Toppo
- * @version 1.0
  * @since 15-March-2020
- *
  */
 @SpringBootApplication
 @EnableDiscoveryClient
