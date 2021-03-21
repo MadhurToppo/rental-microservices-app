@@ -10,7 +10,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
  * Rent service for customer to product rental information
  * @author Madhur Toppo
  * @version 1.0
- * @since 15 March 2020
+ * @since 15th March 2020
  */
 @SpringBootApplication
 @EntityScan(basePackages = {"com.madhurtoppo.rentalcommons.model.rent", "com.madhurtoppo.rentalapp.rentservice.model"})
