@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 /***
  * @author Madhur Toppo
- * @since 15th March 2020
+ * @since March 15th 2020
  */
 @Entity
 @Table(name = "RentedProduct")
