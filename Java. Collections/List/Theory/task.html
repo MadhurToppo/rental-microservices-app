@@ -1,0 +1,135 @@
+<html>
+ <head></head>
+ <body>
+  <p>Collections are containers for grouping elements into a single unit. They are used to store, retrieve, manipulate and communicate aggregate data. Most programming languages have commonly-used collections in standard libraries.</p>
+  <p>First, let's consider commonly-used collections in computer science and applications regardless of the programming language.</p>
+  <div>
+   <ul>
+    <li><b><span style="color: #000;">List</span></b> is an ordered collection, its elements can be accessed by indexes like an array.<br></li>
+   </ul> 
+   <p></p>
+   <p style="text-align: center;"><img alt="" class="image-fullsize" height="65" src="https://ucarecdn.com/5402a846-c311-456b-9a60-2e91114d0e0e/" width="238"></p>
+   <p></p>
+   <ul>
+    <li><b><span style="color: #000;">Set</span></b><span style="color: #000;"> is a collection that stores a set of unique values, like a mathematical set.</span><br></li>
+   </ul>
+   <p></p>
+   <p style="text-align: center;"><img alt="" class="image-fullsize" height="72" src="https://ucarecdn.com/5f9fed87-caf1-4c84-a43f-cfc4f85b8512/" width="95"></p>
+   <p></p>
+   <ul>
+    <li><b><span style="color: #000;">Queue</span></b> is a collection <span style="color: #000;">that implements the principle "FIFO" (first in, first out).</span><br></li>
+   </ul>
+   <p></p>
+   <p style="text-align: center;"><img alt="" class="image-fullsize" height="61" src="https://ucarecdn.com/c3f144b1-e6e7-41a8-874c-aab948e44a1f/" width="131"></p>
+   <p></p>
+   <ul>
+    <li><b><span style="color: #000;">Stack</span></b><span style="color: #000;">&nbsp; is c</span><span style="color: #000;">ollection that implements the principle "LIFO" (last in, first out)</span><br></li>
+   </ul>
+   <p></p>
+   <p style="text-align: center;"><img alt="" class="image-fullsize" height="129" src="https://ucarecdn.com/dc8eda3d-400b-48ff-a834-002f1a5b679f/" width="67"></p>
+   <p></p>
+   <ul>
+    <li><b>Deque</b> <b>(double-ended queue)</b> is a collection that implements both principles "FIFO" and "LIFO" together.</li>
+   </ul>
+   <p></p>
+   <p style="text-align: center;"><img alt="" class="image-fullsize" height="82" src="https://ucarecdn.com/39b07671-0ca7-4fa5-a214-f2239d7a6879/" width="177"></p>
+   <p></p>
+   <ul>
+    <li><b>Map (dictionary) </b>is a<b> </b>collection that store key-value pair</li>
+   </ul> 
+  </div> 
+  <p style="text-align: center;"><img alt="" class="image-fullsize" height="149" src="https://ucarecdn.com/cc075b38-978c-454a-a6d9-d5515c5893ba/" width="147"></p>
+  <p><br>There are also other types of collections, for instance, <b>priority queue, multiset</b>, and others. In a priority queue, an element with high priority is served before an element with low priority. Multiset is a generalization of sets, it can store duplicate elements.</p>
+  <h2 style="text-align: center;">The Collections Framework<b><br></b></h2>
+  <p>Java provides the Collections Framework - a set of classes and interfaces to implement commonly reusable data structures. The framework belongs to the <b></b>package<b> java.util</b>.<br></p>
+  <p>In Java, collections have some important features:</p>
+  <ul>
+   <li>the size of a collection can be changed dynamically;</li>
+   <li>the modern collections are generic types and they can't store primitive types (we will consider only generic collections).</li>
+  </ul>
+  <p>There are two root interfaces: <b>java.util.Collection&lt;E&gt;</b> and <b>java.util.Map&lt;K, V&gt;</b>. Both interfaces are generics.</p>
+  <p>The picture below shows the main interfaces in the framework.</p>
+  <p style="text-align: center;"></p>
+  <p style="text-align: center;"><img alt="" class="image-fullsize" src="https://ucarecdn.com/1c437e1a-73fc-42c0-8011-9a522e54e24c/"></p>
+  <p></p>
+  <p style="text-align: center;"><b>Commonly used interfaces in the Collections Framework</b></p>
+  <p><b></b>As you can see there are two root interfaces: <b>Collection</b> and <b>Map</b>. They do not extend each other. <b>List, Set, Queue, Deque, SortedSet, Sorted</b> are also interfaces. They are implemented by concrete classes for collections.</p>
+  <p>Note, there is no <b>Stack</b> interface. It's recommended to use the <b>Deque</b> interface for stacks. It represents a double-ended queue - a collection that generalizes a queue, for which elements can be added to or removed from either the front (head) or back (tail). Deque supports the FIFO and LIFO principles together. <b>Queues</b> and <b>stacks</b> can be considered specializations of deques.</p>
+  <h2 style="text-align: center;">The Collection interface<b><br></b></h2>
+  <p>The interface <b>Collection&lt;E&gt;</b> is a generic type. It's the base interface for all lists, queues and sets. You can store elements of the specified type E in these collections.<br></p>
+  <div>
+   <br>
+  </div>
+  <div>
+   Here are common methods for collections inherited from the interface Collection:
+  </div>
+  <div>
+   <ul>
+    <li><span style="color: #a03881;">int</span> <b><span style="color: #ff4363;"><span style="color: #000;">size</span><span style="color: #a03881;">()</span></span></b> returns the number of elements in this collection<br></li>
+    <li><span style="color: #a03881;">boolean</span> <b><span style="color: #000;">isEmpty</span></b><span style="color: #a03881;">()</span> returns <b>true</b> if this collection contains no elements</li>
+    <li><span style="color: #a03881;">boolean</span> <b><span style="color: #000;">contains</span></b><span style="color: #a03881;">(Object o)</span> returns <b>true</b> if this collection contains the specified element</li>
+    <li><span style="color: #a03881;">boolean </span><b><span style="color: #000;">add</span></b><span style="color: #000;"><span style="color: #a03881;">(E e)</span></span> ensures that this collection contains the specified element</li>
+    <li><span style="color: #a03881;">boolean</span> <b><span style="color: #000;">remove</span></b><span style="color: #a03881;">(Object o)</span> &nbsp;removes a single instance of the specified element</li>
+    <li><span style="color: #a03881;">void </span><b><span style="color: #a03881;"><span style="color: #000;">clear</span></span></b><span style="color: #a03881;">()</span> removes all elements from this collection</li>
+   </ul>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   Note, methods 
+   <b>remove</b> and 
+   <b>contain</b> uses the method 
+   <b>equals</b> of the elements.
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   The interfaces 
+   <b>List&lt;E&gt;</b>, 
+   <b>Set&lt;E&gt;</b> and 
+   <b>Queue&lt;E&gt;</b> inherit all methods of the 
+   <b>Collection&lt;E&gt;</b> interface.
+  </div>
+  <div>
+   <br>
+  </div>
+  <h2 style="text-align: center;"><b></b>The Map interface</h2>
+  <div>
+   The interface 
+   <b>Map&lt;K, V&gt;</b> is also a generic type. It stores key-values pairs. K is the type of 
+   <span style="color: #ff4363;"><span style="color: #000;">keys</span> </span>and V is the type of stored 
+   <span style="color: #000;">values. </span>This interface is not a subtype of the Collection interface, but maps are often considered as collections.
+   <br>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   A map cannot contain duplicate keys; each key can map to at most one value (even, a collection of values).
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   Here are common methods for collections inherited from the Map interface:
+  </div>
+  <div>
+   <ul>
+    <li><span style="color: #a03881;">int</span> <b><span style="color: #000;">size</span></b><span style="color: #a03881;">()</span> returns the number of elements in this collection<br></li>
+    <li><span style="color: #a03881;">boolean</span> <b><span style="color: #000;">isEmpty</span></b><span style="color: #a03881;">()</span> Returns <b>true</b> if this collection contains no elements<br></li>
+    <li><span style="color: #a03881;">boolean</span> <b><span style="color: #000;">containsKey</span></b><span style="color: #a03881;">(Object key)</span> &nbsp; Returns <b>true</b> if this collection contains the specified key<br></li>
+    <li><span style="color: #a03881;">boolean</span> <b><span style="color: #000;">containsValue</span></b><span style="color: #a03881;">(Object value)</span> Returns <b>true</b> if this collection contains the specified value<br></li>
+    <li><span style="color: #a03881;">V</span> <b><span style="color: #000;">get</span></b><span style="color: #a03881;">(Object key)</span> returns the value to which the specified key is mapped, or <b>null</b><br></li>
+    <li><span style="color: #a03881;">V</span> <b><span style="color: #000;">put</span></b><span style="color: #a03881;">(K key, V value) </span> associates the specified value with the specified key (<b>optional</b>)<br></li>
+    <li><span style="color: #a03881;">V</span> <b><span style="color: #000;">remove</span></b><span style="color: #a03881;">(Object key)</span> removes the mapping for a key from this map (<b>optional</b>) <br></li>
+    <li><span style="color: #a03881;">void</span> <b><span style="color: #000;">clear</span></b><span style="color: #a03881;">()</span> removes all elements from this collection <b>(optional)</b><br></li>
+    <li><span style="color: #a03881;">Set&lt;K</span>&gt; <b><span style="color: #000;">keySet</span></b><span style="color: #a03881;">()</span> Returns a Set view of the keys contained in this map<br></li>
+    <li><span style="color: #a03881;">Collection&lt;V&gt;</span> <b><span style="color: #000;">values</span></b><span style="color: #a03881;">() </span>returns a Collection view of the values contained in this map<br></li>
+    <li><span style="color: #a03881;">Set&lt;Map.Entry&lt;K, V&gt;&gt;</span> <b><span style="color: #000;">entrySet</span></b><span style="color: #a03881;">()</span> returns a Set view of the mappings contained in this map</li>
+   </ul>
+   <p>As you can see, several methods of the <b>Map </b>interface returns other collections.</p>
+  </div>
+ </body>
+</html>

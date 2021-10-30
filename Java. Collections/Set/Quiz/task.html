@@ -1,0 +1,113 @@
+<html>
+ <head></head>
+ <body>
+  <p>Given two sets <b>set1 </b>and <b>set2</b>.</p>
+  <div>
+   Select all cases when the following statement returns 
+   <b>true</b>.
+  </div>
+  <br>
+  <pre><code class="language-java">set1.equals(set2);</code></pre>
+  <div>
+   <br>
+  </div>
+  <div>
+   Cases:
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   a)
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   <pre><code class="language-java">Set&lt;Integer&gt; set1 = new HashSet&lt;&gt;();
+set1.add(1);
+set1.add(2);
+set1.add(3);
+
+Set&lt;Integer&gt; set2 = new HashSet&lt;&gt;();
+set2.add(1);
+set2.add(2);
+set2.add(3);</code></pre> 
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   b)
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   <pre><code class="language-java">Set&lt;Integer&gt; set1 = new HashSet&lt;&gt;();
+set1.add(1);
+set1.add(2);
+set1.add(3);
+
+Set&lt;Integer&gt; set2 = new HashSet&lt;&gt;();
+set2.add(3);
+set2.add(2);
+set2.add(1);</code></pre> 
+   <br>
+  </div>
+  <div>
+   c)
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   <pre><code class="language-java">Set&lt;Integer&gt; set1 = new HashSet&lt;&gt;();
+set1.add(1);
+set1.add(2);
+set1.add(3);
+
+Set&lt;Integer&gt; set2 = new LinkedHashSet&lt;&gt;();
+set2.add(1);
+set2.add(3);
+set2.add(2);</code></pre> 
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   d)
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   <pre><code class="language-java">Set&lt;Integer&gt; set1 = new LinkedHashSet&lt;&gt;();
+set1.add(1);
+set1.add(3);
+set1.add(2);
+
+Set&lt;Integer&gt; set2 = new LinkedHashSet&lt;&gt;();
+set2.add(1);
+set2.add(3);</code></pre>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   e)
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   <pre><code class="language-java">SortedSet&lt;Integer&gt; set1 = new TreeSet&lt;&gt;();
+set1.add(1);
+set1.add(3);
+
+Set&lt;Integer&gt; set2 = new LinkedHashSet&lt;&gt;();
+set2.add(3);
+set2.add(1);</code></pre>
+  </div>
+ </body>
+</html>

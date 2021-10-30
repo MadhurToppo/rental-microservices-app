@@ -1,0 +1,17 @@
+type: stepik
+title: Java. Collections
+language: English
+summary: "This is an introductory course to Java. Join the course for a basic introduction\
+  \ into the language, to learn about collections, and to practice using them in Java\
+  \ programs. \n\nFor those of you who are just starting out on your learning journey,\
+  \ we recommend you do the “Java. Introduction” course first.<br/><br/>Learn more\
+  \ at <a href=\"https://stepik.org/course/6860\">https://stepik.org/course/6860</a>"
+programming_language: Java
+content:
+- List
+- Queue and Stack
+- Set
+- Map
+- Iterator
+- Collections utility class
+mode: Study

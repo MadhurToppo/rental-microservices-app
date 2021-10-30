@@ -1,0 +1,190 @@
+<html>
+ <head></head>
+ <body>
+  <h2 style="text-align: center;">What are lists</h2>
+  <div>
+   A list is an ordered collection of elements. You can iterate over elements of a list sequentially or refer to the index.
+   <br>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   In a sense, a list works a bit like arrays, except their size can be changed dynamically when an array's size is constrained. Moreover, lists provide more advanced behavior than arrays.
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   <p style="text-align: center;"><img alt="" class="image-fullsize" height="65" src="https://ucarecdn.com/5402a846-c311-456b-9a60-2e91114d0e0e/" width="238"></p>
+  </div>
+  <div>
+   <br>
+  </div>
+  <h2 style="text-align: center;"><b></b>The List interface</h2>
+  <div>
+   In Java, the interface 
+   <i>List&lt;E&gt;</i> represents an abstract data type. It extends the interface 
+   <i>Collection&lt;E&gt;</i>.
+   <br>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   The most commonly used method of the interface is the following:
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   <div style="text-align: left;">
+    <ul>
+     <li><span style="color: #a03881;">E <b><span style="color: #000;">get</span></b>(int index)</span> returns the element at the specified position in this list<br></li>
+     <li><span style="color: #a03881;">int</span> <b><span style="color: #ff4363;"><span style="color: #000;">size</span><span style="color: #a03881;">()</span></span></b> returns the number of elements in this collection</li>
+     <li><span style="color: #a03881;">boolean </span><b><span style="color: #000;">isEmpty</span></b><span style="color: #a03881;">()</span> returns <b>true</b> if this collection contains no elements<br></li>
+     <li><span style="color: #a03881;">boolean </span><b><span style="color: #000;">contains</span></b><span style="color: #a03881;">(Object o)</span> returns <b>true</b> if this collection contains the specified element<br></li>
+     <li><span style="color: #000;"><span style="color: #a03881;">boolean </span></span><b><span style="color: #000;">add</span></b><span style="color: #000;"><span style="color: #a03881;">(E e)</span></span> ensures that this collection contains the specified element<br></li>
+     <li><span style="color: #a03881;">boolean </span><b><span style="color: #000;">remove</span></b><span style="color: #a03881;">(Object o) </span>removes a single instance of the specified element<br></li>
+     <li><span style="color: #000;"><span style="color: #a03881;">void </span></span><b><span style="color: #a03881;"><span style="color: #000;">clear</span></span></b><span style="color: #a03881;">()</span> removes all elements from this collection<br></li>
+     <li><span style="color: #a03881;">void <b><span style="color: #000;">add</span></b>(int index, E element)</span> inserts the specified element at the specified position in this list<br></li>
+     <li><span style="color: #a03881;">E <b><span style="color: #000;">remove</span></b>(int index)</span> removes the element at the specified position in this list and returns it<br></li>
+     <li><span style="color: #a03881;">E<b> </b><span style="color: #000;"><b>set</b></span>(int index, E element)</span> replaces the element at the specified position in this list with the specified element<br></li>
+     <li><span style="color: #a03881;">int<span style="color: #000;"><b> indexOf</b></span>(Object o) </span>returns the index of the first occurrence of the specified element in this list, or -1<br></li>
+    </ul>
+    <div> 
+     <p>You can't create an instance of the interface List, but you can create an instance of one of its implementations: <i>ArrayList</i> or <i>LinkedList</i>.</p>
+     <p>These implementations have different inner mechanisms, but the common interface List allows you to work with both of them in the same way.</p>
+    </div>
+   </div>
+  </div>
+  <h2 style="text-align: center;"><b></b>ArrayList</h2>
+  <p>It is a resizable-array implementation of the <samp>List</samp> interface. Implements all optional list operations, and permits all elements, including <samp>null</samp>. In addition to implementing the <samp>List</samp> interface, this class provides methods to manipulate the size of the array that is used internally to store the list <br></p>
+  <div>
+   <div style="text-align: left;">
+    <p><br></p>
+   </div>
+  </div>
+  <div>
+   <p>The constructor of <b>ArrayList</b> has three overloaded forms:</p>
+   <div>
+    <ul>
+     <li><b>ArrayList()</b> constructs an empty list with an initial capacity of ten;<br></li>
+     <li><b>ArrayList(Collection&lt;? extends E&gt; c)</b> constructs a list containing the elements of the specified collection;<br></li>
+     <li><b>ArrayList(int initialCapacity)</b>&nbsp; constructs an empty list with the specified initial capacity.</li>
+    </ul>
+    <p>Here is an example of instantiating a list.</p>
+   </div>
+   <pre><code class="language-java">List&lt;String&gt; list = new ArrayList&lt;&gt;(); // a list of strings, it has the default size 10</code></pre>
+  </div>
+  <div>
+   <br>
+  </div>
+  <h2 style="text-align: center;"><b></b>LinkedList</h2>
+  <div>
+   Doubly-linked list implementation of the List interface. &nbsp;
+   <br>
+  </div>
+  <div>
+   <p>All of the operations perform as could be expected for a doubly-linked list. Operations that index into the list will traverse the list from the beginning or the end, whichever is closer to the specified index</p>
+   <p>Constructors:</p>
+   <ul>
+    <li>LinkedList() constructs an empty list;</li>
+    <li>LinkedList(Collection&lt;? extends E&gt; c) constructs a list containing the elements of the specified collection;</li>
+   </ul>
+   <div>
+    <pre><code class="language-java">List&lt;String&gt; list = new LinkedList&lt;&gt;(); // a list of strings</code></pre>
+    <p>Access to the first and the last element of the list is always carried out in constant time because links are permanently stored in the first and the last elements, so adding an item to the end of the list does not mean that you have to iterate the whole list in search of the last element.</p>
+    <p>In general case, LinkedList in absolute terms loses ArrayList and the memory consumption and the speed of operations.</p>
+   </div>
+  </div>
+  <h2 style="text-align: center;"><b></b>An example of List usage</h2>
+  <p>Here is an example when an instance of ArrayList containing strings is created and processed.</p>
+  <pre><code class="language-java">import java.util.ArrayList;
+import java.util.List;
+
+...
+
+    List&lt;String&gt; nameList = new ArrayList&lt;&gt;(); // create a list of strings
+    
+    boolean isEmpty = nameList.isEmpty(); // true, it's empty
+    int listSize = nameList.size();       // the size is 0
+
+
+    /** 
+     * Add 4 elements to the collection 
+     */</code><code class="language-java">nameList.add("Mr.Green");
+    nameList.add("Mr.Red");
+    nameList.add("Mr.Yellow");
+    nameList.add("Mr.Red");
+    
+    isEmpty = nameList.isEmpty(); // false, it's not empty
+    listSize = nameList.size();   // the size is 4
+
+    int elementIndex = nameList.indexOf("Mr.Yellow"));  // elementIndex is 2
+    String elementItself = nameList.get(elementIndex)); // elementItself is "Mr.Yellow"
+
+
+    /** 
+    Replace the item in the specified position
+    nameList is [Mr.Green, Mr.Red, Mr.Brown, Mr.Red]
+    */
+    nameList.set(elementIndex, "Mr.Brown");
+
+
+    /** 
+    Delete the item in the specified position
+    nameList is [Mr.Green, Mr.Brown, Mr.Red]
+    */
+    nameList.remove(1);
+
+    /** 
+    Clear the entire list
+    nameList is []
+    */
+    nameList.clear();
+
+...</code></pre>
+  <p><b><br></b></p>
+  <h2 style="text-align: center;"><b></b>Other useful list operations<br></h2>
+  <p>1) Iterating over the list using the "for-each" loop</p>
+  <pre></pre>
+  <pre><code class="language-java">for (String name : nameList) {
+&nbsp; &nbsp; System.out.println(name);
+}</code></pre>
+  <div>
+   <br>
+  </div>or
+  <pre><code class="language-java">for (int i = 0; i &lt; nameList.size(); i++) {
+&nbsp; &nbsp; System.out.println(nameList.get(i));
+}</code></pre> 
+  <br>2) Convert list to array
+  <br>
+  <b></b>
+  <br>
+  <pre><code class="language-java">Object[] objArray = nameList.toArray();</code>
+or if we need a string array
+
+</pre>
+  <pre><code class="language-java">String[] strArray = nameList.toArray(new String[0]);</code><br></pre>
+  <div>
+   3) Convert an array to a list
+  </div>
+  <b><br></b>
+  <div>
+   <b></b>
+   <pre><code>List&lt;String&gt; list = java.util.Arrays.asList("one", "two", "three");</code></pre>
+   <div>
+    <pre>4) Sublist</pre> 
+    <br>
+    <pre><code class="language-java">List&lt;Integer&gt; numList = new ArrayList&lt;&gt;(Arrays.asList(10,20,30,40,50));
+
+System.out.println(numList.subList(1,3)); //[20, 30]
+
+numList.subList(1,3).clear();
+
+System.out.println(numList); //[10, 40, 50]</code></pre>
+   </div>
+  </div>
+ </body>
+</html>

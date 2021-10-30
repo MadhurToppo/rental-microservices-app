@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="distributionType" value="WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Collections utility class/Programming" />
+            <option value="$PROJECT_DIR$/Collections utility class/Programming (1)" />
+            <option value="$PROJECT_DIR$/Collections utility class/Quiz" />
+            <option value="$PROJECT_DIR$/Collections utility class/Theory" />
+            <option value="$PROJECT_DIR$/Iterator/Quiz" />
+            <option value="$PROJECT_DIR$/Iterator/Theory" />
+            <option value="$PROJECT_DIR$/List/Programming" />
+            <option value="$PROJECT_DIR$/List/Programming (1)" />
+            <option value="$PROJECT_DIR$/List/Programming (2)" />
+            <option value="$PROJECT_DIR$/List/Programming (3)" />
+            <option value="$PROJECT_DIR$/List/Programming (4)" />
+            <option value="$PROJECT_DIR$/List/Programming (5)" />
+            <option value="$PROJECT_DIR$/List/Quiz" />
+            <option value="$PROJECT_DIR$/List/Quiz (1)" />
+            <option value="$PROJECT_DIR$/List/Theory" />
+            <option value="$PROJECT_DIR$/List/Theory (1)" />
+            <option value="$PROJECT_DIR$/Map/Programming" />
+            <option value="$PROJECT_DIR$/Map/Programming (1)" />
+            <option value="$PROJECT_DIR$/Map/Programming (2)" />
+            <option value="$PROJECT_DIR$/Map/Programming (3)" />
+            <option value="$PROJECT_DIR$/Map/Programming (4)" />
+            <option value="$PROJECT_DIR$/Map/Programming (5)" />
+            <option value="$PROJECT_DIR$/Map/Theory" />
+            <option value="$PROJECT_DIR$/Queue and Stack/Programming" />
+            <option value="$PROJECT_DIR$/Queue and Stack/Programming (1)" />
+            <option value="$PROJECT_DIR$/Queue and Stack/Programming (2)" />
+            <option value="$PROJECT_DIR$/Queue and Stack/Programming (3)" />
+            <option value="$PROJECT_DIR$/Queue and Stack/Programming (4)" />
+            <option value="$PROJECT_DIR$/Queue and Stack/Programming (5)" />
+            <option value="$PROJECT_DIR$/Queue and Stack/Programming (6)" />
+            <option value="$PROJECT_DIR$/Queue and Stack/Quiz" />
+            <option value="$PROJECT_DIR$/Queue and Stack/Theory" />
+            <option value="$PROJECT_DIR$/Set/Programming" />
+            <option value="$PROJECT_DIR$/Set/Programming (1)" />
+            <option value="$PROJECT_DIR$/Set/Programming (2)" />
+            <option value="$PROJECT_DIR$/Set/Quiz" />
+            <option value="$PROJECT_DIR$/Set/Quiz (1)" />
+            <option value="$PROJECT_DIR$/Set/Quiz (2)" />
+            <option value="$PROJECT_DIR$/Set/Theory" />
+            <option value="$PROJECT_DIR$/util" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

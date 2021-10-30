@@ -1,0 +1,69 @@
+<html>
+ <head></head>
+ <body>
+  <h2 style="text-align: center;"><b></b>Polymorphic utility methods</h2>
+  <div>
+   <i><b>The Java Collections Framework</b> </i>includes the utility class 
+   <b>Collections</b>
+   <i><b></b></i> containing a lot of static methods for creating and processing collections. Do not confuse this class and the
+   <b> Collection</b> interface. They are completely different things.
+   <br>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   The class 
+   <b>Collections</b> contains polymorphic algorithms that operate on collections.
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   Let's see some groups of these methods:
+  </div>
+  <div>
+   <ul>
+    <li>creating empty collections: <span style="color: #a03881;">Collections.</span><b>emptyList()</b>, <span style="color: #a03881;">Collections.</span><b>emptyMap()</b>, <span style="color: #a03881;">Collections</span>.<span style="color: #000;"><b>emptySet()</b></span> and so on;</li>
+    <li>creating colections with a single element: <span style="color: #a03881;">Collections</span>.<span style="color: #000;"><b>singletonList(T o)</b></span>, <span style="color: #a03881;">Collections.</span><b>singletonMap(K key, V val)</b>, etc;<b></b></li>
+    <li>sorting, shuffling and reversing lists: <span style="color: #a03881;">Collections.</span><span style="color: #000;"><b>sort(List&lt;T&gt; list)</b>, <span style="color: #a03881;">Collections.</span><b>shuffle(List&lt;?&gt; list)</b>, <span style="color: #a03881;">Collections.</span><b>reverse(List&lt;?&gt; list)</b>;<b></b><b></b><b></b></span></li>
+    <li><span style="color: #000;">check the two collections do not contain common elements: <span style="color: #a03881;">Collections.</span><b>disjoint(Collection&lt;?&gt; c1, Collection&lt;?&gt; c2)</b>;<br></span></li>
+    <li><span style="color: #000;">counting the number of elements equal to the specified object: <span style="color: #a03881;">Collections.</span><b>frequency(Collection&lt;?&gt; c, Object o)</b>; </span></li>
+   </ul>
+   <p>Note, the listed methods have overloaded versions.</p>
+   <p>Of course, it's not all methods here. The class also contains methods for finding max and min values in collections, replacing elements, copying collections, creating an unmodifiable view of collections and so on.</p>
+   <p>See the full list of methods here: <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html" rel="nofollow noopener noreferrer">https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html</a>.<br></p>
+   <h2 style="text-align: center;"><b></b>List processing example</h2>
+   <p>Let's assume we have the collection<b> list</b> containing elements [1, 2, 3, 2, 3, 4].<br></p>
+   <pre><code class="language-java">int countInList = Collections.frequency(list, 3); // the count is 2
+
+Collections.sort(list); // [1, 2, 3, 2, 3, 4] -&gt; [1, 2, 2, 3, 3, 4]
+
+Collections.reverse(list); // [4, 3, 3, 2, 2, 1]
+
+Collections.addAll(list, 5, 6, 7); // the list is [4, 3, 3, 2, 2, 1, 5, 6, 7]
+
+int max = Collections.max(list); // the max is 7
+
+// It's impossible to change the unmodifiable list
+List&lt;Integer&gt; unmodifiableList = Collections.unmodifiableList(list);
+
+Collections.shuffle(unmodifiableList); // it throws UnsupportedOperationException</code></pre>
+   <p>Methods for creating empty and singleton collections also returns unmodifiable collections.<br></p>
+   <p>Here is an interesting example:</p>
+   <pre><code class="language-java">List&lt;Integer&gt; singletonList = Collections.singletonList(10);
+
+Collections.sort(singletonList); // it doesn't throw an exception
+
+Collections.shuffle(singletonList); // it doesn't throw an exception
+&nbsp; &nbsp; &nbsp; &nbsp; 
+Collections.addAll(singletonList, 1, 2); // it throws the UnsupportedOperationException</code></pre> 
+   <br>This example is easy to understand, the sorting and shuffling a list containing one element doesn't require its modification.
+   <br>
+   <h2 style="text-align: center;"><b></b>Conclusion</h2>
+   <p>If you have a task related to processing collections before you start writing your code look at the possible solution here.</p>
+   <p>Many methods of the Collections class allows you to process other collections, not only lists.</p>
+  </div>
+  <div></div>
+ </body>
+</html>

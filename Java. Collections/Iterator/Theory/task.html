@@ -1,0 +1,95 @@
+<html>
+ <head></head>
+ <body>
+  <h2 style="text-align: center;"><b></b>Iterable<b></b></h2>
+  <div>
+   The interface 
+   <b>Collection</b> extends the interface 
+   <b>Iterable</b>. Implementing this interface allows an object to be the target of the 
+   <b>for-each</b> loop. The order of elements when iterating is specific to a concrete collection.
+   <br>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   <pre><code class="language-java">Collection&lt;String&gt; strings = Arrays.asList("first", "second", "third");
+&nbsp; &nbsp; &nbsp; &nbsp; 
+// iterating over collection using the "for-each" loop
+for (String elem : strings) {
+    System.out.println(elem);
+}</code></pre> 
+   <br>
+  </div>
+  <div>
+   Since Java 8 the interface 
+   <i>Iterable</i> has three methods (before, only one). One of them is
+   <b> </b>
+   <i>iterator()</i>
+   <b><i> </i></b>returning 
+   <b></b>
+   <i>Iterator&lt;T&gt;. </i>All collections that inherit the 
+   <b>Collection</b> interface has this method (Maps doesn't have this method).
+  </div>
+  <h2 style="text-align: center;"><b></b>Iterator</h2>
+  <div>
+   The iterator is a universal mechanism for iterating over collections regardless of their structure. It's possible to remove elements from the underlying collection during the iteration.
+   <br>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   Some methods of the 
+   <b>Iterator&lt;E&gt;</b> interface:
+  </div>
+  <div>
+   <ul>
+    <li><span style="color: #a03881;">boolean</span><b> </b><span style="color: #000;"><b>hasNext</b></span><span style="color: #a03881;">()</span> returns <b>true</b> if the iteration has more elements, otherwise - <b>false</b></li>
+    <li><b></b><span style="color: #a03881;">E</span><b> next</b><span style="color: #a03881;">()</span><b></b> returns the next element in the iteration</li>
+    <li><span style="color: #a03881;">void</span> <b>remove</b><span style="color: #a03881;">()</span> removes from the collection the last element returned by this iterator</li>
+   </ul>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   The typical usage of the iterator includes three steps:
+  </div>
+  <div>
+   <ol>
+    <li>check the collection has next element</li>
+    <li>obtain the next element</li>
+    <li>processing the obtained element</li>
+   </ol>
+   <p>For example, let's remove all elements less than 10 from a set.</p>
+   <pre><code class="language-java">Set&lt;Long&gt; set = new TreeSet&lt;&gt;(); // sorted set
+set.add(10L);
+set.add(5L);
+set.add(18L);
+set.add(14L);
+set.add(9L);
+
+System.out.println(set); // [5, 9, 10, 14, 18]
+
+Iterator&lt;Long&gt; iter = set.iterator();
+while (iter.hasNext()) {
+    Long current = iter.next();
+&nbsp; &nbsp; if (current &lt; 10) {
+&nbsp; &nbsp;     iter.remove();
+&nbsp; &nbsp; }
+}
+
+System.out.println(set); // [10, 14, 18]</code></pre>
+   <p>The iterator allows you to remove elements from the collection but you can't do it inside the "for-each" loop.</p>
+   <p>Important, an iterator iterates over a collection in order depending on the order of elements of the collection. In the example above, the iterator gets elements according to sorting order (because of TreeSet).</p>
+   <h2 style="text-align: center;"><b></b>ListIterator</h2>
+   <p>It's an iterator only for lists that allows the programmer to traverse the list in either direction, modify the list during iteration, and obtain the iterator's current position in the list. This iterator has no current element; its cursor position always lies between the element that would be returned by a call to <i>previous()</i> and the element that would be returned by a call to <i>next()</i>.</p>
+   <p>Here is an example.</p>
+   <pre><code class="language-java">ListIterator&lt;Integer&gt; listIterator = list.listIterator(); // only for lists!
+while (listIterator.hasPrevious()){
+    System.out.println(listIterator.previous() +" on "+ listIterator.previousIndex());
+}</code></pre>
+  </div>
+ </body>
+</html>

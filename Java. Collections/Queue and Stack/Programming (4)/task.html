@@ -1,0 +1,32 @@
+<html>
+ <head></head>
+ <body>
+  Given a string consisting of brackets, write a program to examine whether the pairs and the orders of "{", "}", "(", ")", "[", "]" are correct (balanced). For example, the program should print 
+  <code>true</code> for the string 
+  <code>[()]{}{[()()]()}</code> and 
+  <code>false</code> for 
+  <code>()[]}</code>.
+  <div>
+   <br>
+  </div>
+  <div>
+   The classic algorithm for solving this problem relies on using a stack.
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   <div>
+    <ol>
+     <li>create an instance of a stack;<br></li>
+     <li>traverse the input string;
+      <ol>
+       <li>if the current character is a starting bracket "(" or "{" or "{" then push it to the stack;</li>
+       <li>if the current is a closing bracket ")" or "}" or "]" then remove (pop) the top element from the stack; if the popped bracket is the matching starting bracket then fine else parenthesis are not balanced;</li>
+      </ol></li>
+     <li>after completing traversal, if there are some starting brackets left in the stack, then the parenthesis are not balanced.</li>
+    </ol>
+   </div>
+  </div>
+ </body>
+</html><br><b>Sample Input:</b><br><pre><code class="language-no-highlight">([][])</code></pre><br><b>Sample Output:</b><br><pre><code class="language-no-highlight">true</code></pre><br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 8 seconds</font><br><br>

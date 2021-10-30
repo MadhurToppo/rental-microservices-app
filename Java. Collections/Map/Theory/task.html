@@ -1,0 +1,214 @@
+<html>
+ <head></head>
+ <body>
+  <h2 style="text-align: center;">What are maps<br></h2>
+  <div>
+   <b>Map</b> is a collection that stores key-value pairs. A map can't contain duplicate keys, but values can repeat.
+   <br>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   <p style="text-align: center;"><img alt="" class="image-fullsize" height="163" src="https://ucarecdn.com/cc075b38-978c-454a-a6d9-d5515c5893ba/" width="160"></p>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   <div>
+    In a sense, a map can be considered as "extended" array because the key is similar to index but it can be of any type, including integer numbers, strings and so on.
+    <b><br></b>
+   </div>
+   <div>
+    <br>
+   </div>
+   <div>
+    Important, you need a correct implementation of equals and hashcode if you'd like use objects of your custom class as a map keys.
+   </div>
+   <div>
+    <b><br></b>
+   </div>
+   <h2 style="text-align: center;"><b></b>The Map interface</h2>
+   <div>
+    The interface Map&lt;K, V&gt; is a generic type, where K is the type of 
+    <span style="color: #ff4363;"><span style="color: #000;">keys</span> </span>and V is the type of stored 
+    <span style="color: #000;">values. </span>The interface is not a subtype of the Collection interface, but maps are often considered as collections.
+    <br>
+   </div>
+   <div>
+    <br>
+   </div>
+   <div>
+    A map cannot contain duplicate keys; each key can map to at most one value (even, a collection of values).
+   </div>
+   <div>
+    <br>
+   </div>
+   <div>
+    The interface declares a lot of methods, here are some of them:
+   </div>
+   <div>
+    <ul>
+     <li><span style="color: #a03881;">int</span> <b><span style="color: #000;">size</span></b><span style="color: #a03881;">()</span> returns the number of elements in this collection<br></li>
+     <li><span style="color: #a03881;">boolean</span> <b><span style="color: #000;">isEmpty</span></b><span style="color: #a03881;">()</span> Returns <b>true</b> if this collection contains no elements<br></li>
+     <li><span style="color: #a03881;">boolean</span> <b><span style="color: #000;">containsKey</span></b><span style="color: #a03881;">(Object key)</span>&nbsp; Returns <b>true</b> if this collection contains the specified key<br></li>
+     <li><span style="color: #a03881;">boolean</span> <b><span style="color: #000;">containsValue</span></b><span style="color: #a03881;">(Object value)</span> Returns <b>true</b> if this collection contains the specified value<br></li>
+     <li><span style="color: #a03881;">V</span> <b><span style="color: #000;">get</span></b><span style="color: #a03881;">(Object key)</span> returns the value to which the specified key is mapped, or <b>null</b><br></li>
+     <li><span style="color: #a03881;">V</span> <b><span style="color: #000;">put</span></b><span style="color: #a03881;">(K key, V value) </span>associates the specified value with the specified key<br></li>
+     <li><span style="color: #a03881;">V</span> <b><span style="color: #000;">remove</span></b><span style="color: #a03881;">(Object key)</span> removes the mapping for a key from this map<br></li>
+     <li><span style="color: #a03881;">void</span> <b><span style="color: #000;">clear</span></b><span style="color: #a03881;">()</span> removes all elements from this collection<br></li>
+     <li><span style="color: #a03881;">Set&lt;K</span>&gt; <b><span style="color: #000;">keySet</span></b><span style="color: #a03881;">()</span> returns a Set view of the keys contained in this map<br></li>
+     <li><span style="color: #a03881;">Collection&lt;V&gt;</span> <b><span style="color: #000;">values</span></b><span style="color: #a03881;">() </span>returns a Collection view of the values contained in this map<br></li>
+     <li><span style="color: #a03881;">Set&lt;Map.Entry&lt;K, V&gt;&gt;</span> <b><span style="color: #000;">entrySet</span></b><span style="color: #a03881;">()</span> returns a Set view of the pairs contained in this map</li>
+     <li><span style="color: #a03881;">V</span> <b>putIfAbsent</b><span style="color: #a03881;">(K key, V value)</span> - if the specified key is not already associated with a value (or is mapped to <b>null</b>) associates it with the given value and return <b>null</b>, otherwise - returns the current value</li>
+     <li><span style="color: #a03881;">V</span> <span style="color: #000;"><b>getOrDefault</b></span><span style="color: #a03881;">(Object key, V </span><span style="color: #a03881;">defaultValue</span><span style="color: #a03881;">)</span> returns the value to which the specified key is mapped, or defaultValue if this map contains no mapping for the key</li>
+    </ul>
+    <p>The Standard Class Library provides a lot of the interface implementations. We will consider only the most commonly used implementations: <i>HashMap</i>, <i>TreeMap</i> and <i>LinkedHashMap</i>.</p>
+   </div>
+  </div>
+  <div>
+   <b><br></b>
+  </div>
+  <h2 style="text-align: center;"><b></b>HashMap<br></h2>
+  <div>
+   The HashMap implements the base Map interfaces. It does not guarantee any order of the elements stored internally in the map.
+   <br>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   This implementation provides constant-time performance for the basic operations (
+   <samp>get</samp> and 
+   <samp>put</samp>), assuming the hash function disperses the elements properly among the buckets.
+   <br>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   <pre><code class="language-java">Map&lt;Integer, String&gt; products = new HashMap&lt;&gt;(); // unordered map of products
+
+products.put(1000, "Notebook");
+products.put(2000, "Phone");
+products.put(3000, "Keyboard");
+
+System.out.println(products); // {2000=Phone, 1000=Notebook, 3000=Keyboard}
+
+String notebook = products.get(1000); // "Notebook"
+String noSuchProduct = products.get(4000); // it's null
+
+// iterating over pairs of the map
+for (Map.Entry&lt;Integer, String&gt; product : products.entrySet()) {
+    System.out.println(product.getKey() + ": " + product.getValue());
+}
+&nbsp; &nbsp; &nbsp; &nbsp; 
+// iterating over values of the map
+for (String productName : products.values()) {
+    System.out.println(productName);
+}</code></pre> 
+   <br>
+  </div>
+  <div>
+   Remember, this implementation is unordered.
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   <h2 style="text-align: center;"><b></b>LinkedHashMap</h2>
+   <div>
+    It extends HashMap class. It creates a linked list of elements in the map, located in the order in which they were inserted.
+    <br>
+   </div>
+   <div>
+    <br>
+   </div>
+   <div>
+    Let's see a part of the previous example again:
+   </div>
+   <div>
+    <br>
+   </div>
+   <div>
+    <pre><code class="language-java">Map&lt;Integer, String&gt; products = new LinkedHashMap&lt;&gt;(); // ordered map of products
+
+products.put(1000, "Notebook");
+products.put(2000, "Phone");
+products.put(3000, "Keyboard");
+
+System.out.println(products); // it's always ordered {1000=Notebook, 2000=Phone, 3000=Keyboard}</code></pre>
+   </div>
+   <div>
+    <br>
+   </div>
+   <div>
+    Remember, this map implementation is ordered.
+   </div>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   <div>
+    <h2 style="text-align: center;"><b></b>TreeMap<b></b><br></h2>
+    <p>The class TreeMap guarantees the order of the elements when iterated. The map is sorted according to the natural ordering of its keys, or by a Comparator provided at map creation time, depending on which constructor is used.</p>
+    <p>This class implements the SortedMap interface that extends the base Map interface. The SortedMap interface provides some new methods:</p>
+   </div>
+   <div>
+    <ul>
+     <li><span style="color: #a03881;">Comparator&lt;? super K&gt;</span> <span style="color: #000;"><b>comparator</b></span><span style="color: #a03881;">()</span> returns the comparator used to order elements in the set or null if the map uses the natural ordering of its elements</li>
+     <li><span style="color: #a03881;">E</span> <span style="color: #000;"><b>firstKey</b></span><span style="color: #a03881;">()</span> returns the first (lowest) key in the map</li>
+     <li><span style="color: #a03881;">E</span> <b>lastKey</b><span style="color: #a03881;">()</span> returns the last (highest) key in the map</li>
+     <li><span style="color: #a03881;">SortedMap&lt;K, V&gt;</span> <span style="color: #000;"><b>headMap</b></span><span style="color: #a03881;">(K </span><span style="color: #a03881;">toKey</span><span style="color: #a03881;">)</span> returns a submap containing elements whose keys are strictly less than toKey</li>
+     <li><span style="color: #a03881;">SortedMap&lt;K, V&gt;</span> <b>tailMap</b><span style="color: #a03881;">(K fromKey</span><span style="color: #a03881;">)</span> returns a submap containing elements whose keys are greater than or equal to fromKey</li>
+     <li><span style="color: #a03881;">SortedMap&lt;K, V&gt;</span> <b>subMap</b><span style="color: #a03881;">(K </span><span style="color: #a03881;">fromKey</span><span style="color: #a03881;">, E </span><span style="color: #a03881;">toKey</span><span style="color: #a03881;">)</span> returns a submap containing elements whose keys in range fromKey (inclusive) toKey (exclusive)</li>
+    </ul>
+   </div>
+   <div>
+    <br>
+   </div>
+   <div>
+    In the following example, an instance of TreeMap is created and filled with events. Each event has a date (key) and title (value).
+   </div>
+   <div>
+    <br>
+   </div>
+   <div>
+    <pre><code class="language-java">SortedMap&lt;LocalDate, String&gt; events = new TreeMap&lt;&gt;();
+
+events.put(LocalDate.of(2017, 6, 6), "The Java Conference");
+events.put(LocalDate.of(2017, 6, 7), "Another Java Conference");
+events.put(LocalDate.of(2017, 6, 8), "Discussion: career or education?");
+events.put(LocalDate.of(2017, 6, 9), "The modern art");
+events.put(LocalDate.of(2017, 6, 10), "Coffee master class");
+
+LocalDate fromInclusive = LocalDate.of(2017, 6, 8);
+LocalDate toExclusive = LocalDate.of(2017, 6, 10);
+
+System.out.println(events.subMap(fromInclusive, toExclusive));</code></pre>
+   </div>
+   <div>
+    <br>
+   </div>
+   <div>
+    Note, 
+    <i>LocalDate.of(year, month, day)</i> creates the specified date object with the given year, month and day.
+    <br>
+   </div>
+   <div>
+    <br>
+   </div>
+   <div>
+    The code outputs the resulting submap:
+   </div>
+   <div>
+    <br>
+   </div>
+   <div>
+    <pre><code class="language-java">{2017-06-08=Discussion: career or education?, 2017-06-09=The modern art}</code></pre>
+   </div>
+  </div>
+ </body>
+</html>

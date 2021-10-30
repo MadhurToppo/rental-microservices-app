@@ -1,0 +1,133 @@
+<html>
+ <head></head>
+ <body>
+  <h2 style="text-align: center;">Queue</h2>
+  <div>
+   The queue is a collection that is inserted and removed according to the first-in-first-out (FIFO) principle.
+   <br>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   <p style="text-align: center;"><img alt="" class="image-fullsize" height="77" src="https://ucarecdn.com/c3f144b1-e6e7-41a8-874c-aab948e44a1f/" width="164"></p>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   An excellent example of a queue is a line of students in the food court. New additions to a line made to the back of the queue, while removal (or serving) happens in the front. In the queue, only two operations are allowed 
+   <b>enqueue</b> and 
+   <b>dequeue</b>. Enqueue means to insert an item into the back of the queue, dequeue means removing the front item. In Java, these methods have other names.
+   <br>
+  </div>
+  <div>
+   <br>
+  </div>
+  <h2 style="text-align: center;"><b></b>The interface Queue</h2>
+  <div>
+   This interface extends the interface Collection and adds some new methods:
+   <br>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   <ul>
+    <li><span style="color: #ff4363;"><span style="color: #000;"><span style="color: #a03881;">boolean </span><b>add</b></span><span style="color: #a03881;">(E e)</span></span> inserts the specified element into this queue if it is possible to do so immediately without violating capacity restrictions, returning <b>true</b> upon success and throwing an<b> IllegalStateException</b> if no space is currently available.</li>
+    <li><span style="color: #a03881;">boolean</span> <b><span style="color: #000;">offer</span></b><span style="color: #a03881;">(E e)</span> inserts the specified element into this queue if it is possible to do so immediately without violating capacity restrictions.</li>
+    <li><span style="color: #a03881;">E <b></b><span style="color: #000;"><b>remove</b></span><b></b></span><span style="color: #a03881;">()</span> retrieves and removes the head of this queue; if it's empty, the method throws <b>NoSuchElementException</b>.</li>
+    <li><span style="color: #000;"><span style="color: #a03881;">E</span> <b>poll</b></span><span style="color: #000;"><span style="color: #a03881;">()</span></span> retrieves and removes the head of this queue, or returns <b>null</b> if this queue is empty.</li>
+    <li><span style="color: #a03881;">E</span> <b>element</b><span style="color: #a03881;">()</span> retrieves, but does not remove, the head of the queue; if it's empty, the method throws <b>NoSuchElementException</b>.</li>
+    <li><span style="color: #a03881;">E <b><span style="color: #000;">peek</span></b></span><span style="color: #a03881;">()</span> retrieves, but does not remove, the head of this queue, or returns <b>null</b> if this queue is empty.</li>
+   </ul>
+  </div>
+  <div>
+   <br>
+  </div>
+  <h2 style="text-align: center;"><b></b>Stack</h2>
+  <div>
+   The stack is a collection that are inserted and removed according to the last-in-first-out (LIFO) principle. In the pushdown stacks only two operations are allowed: 
+   <b>push</b> the item into the stack, and 
+   <b>pop</b> the item out of the stack. A stack is a limited access data structure - elements can be added and removed from the stack only at the top.
+   <br>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   <p style="text-align: center;"><img alt="" class="image-fullsize" height="144" src="https://ucarecdn.com/dc8eda3d-400b-48ff-a834-002f1a5b679f/" width="76"></p>
+   <br>
+   <p>A helpful analogy is to think of a stack of books; you can remove only the top book, also you can add a new book on the top.</p>
+   <p>The Standard Class Library has the class Stack, but, according to JavaDoc, a more complete and consistent set of LIFO stack operations is provided by the Deque interface and its implementations, which should be used in preference to this class.</p>
+   <h2 style="text-align: center;"><b></b>Deque</h2>
+   <p>The java.util.Deque&lt;E&gt; interface extends the interface. java.util.Queue&lt;E&gt;. It represents a queue where you can insert and remove elements from both ends of the queue. Thus, "Deque" is short for "Double-Ended Queue".</p>
+   <p>It has methods for working with the first and the last element of a queue:</p>
+   <p style="text-align: center;"></p>
+   <p style="text-align: center;"><img alt="" class="image-fullsize" src="https://ucarecdn.com/217b76fa-34d5-4e94-b339-66af25ea2205/"></p>
+   <b>Table of deque methods: some throws an exception and some returns a special value</b>
+   <p></p>
+   <p>There are two implementations of the interface Deque: <i>ArrayDeque</i> and <i>LinkedList</i>. So, these classes can work as Queue (FIFO), Stack (LIFO), and Deque (Double-Ended Queue).</p>
+  </div>
+  <h2 style="text-align: center;"><b></b>Deque in practice</h2>
+  <p>It's possible to use implementations of the Deque interface as a queue (FIFO).</p>
+  <pre><code class="language-java">Queue&lt;String&gt; q = new ArrayDeque&lt;&gt;();
+
+q.add("first");
+q.add("second");
+q.add("third");
+
+System.out.println(q.peek()); // "first", it doesn't remove the element
+System.out.println(q.peek()); // "first"
+System.out.println(q.remove()); // "first", it removes and returns the head element
+
+System.out.println(q.peek()); // "second"
+System.out.println(q.remove()); // "second"
+
+System.out.println(q.remove()); // "third"
+
+System.out.println(q.isEmpty()); // "true"</code></pre>
+  <p>Also, it's possible to use any implementation of the Deque interface as a stack (LIFO).</p>
+  <pre><code class="language-java">Deque&lt;String&gt; stack = new ArrayDeque&lt;&gt;();
+
+stack.offerLast("first");
+stack.offerLast("second");
+stack.offerLast("third");
+
+System.out.println(stack); // [first, second, third]
+
+System.out.println(stack.pollLast()); // "third"
+System.out.println(stack.pollLast()); // "second"
+System.out.println(stack.pollLast()); // "first"
+
+System.out.println(stack.pollLast()); // null</code></pre>
+  <h2 style="text-align: center;"><b></b>The old Stack class</h2>
+  <p>But sometimes, the class Stack&lt;E&gt; with more a minimalistic API is used. It doesn't implement Deque or Queue interface.</p>
+  <p>See an example below.</p>
+  <pre><code class="language-java">Stack&lt;String&gt; stack = new Stack&lt;&gt;();
+
+stack.push("first");
+stack.push("second");
+stack.push("third");
+
+System.out.println(stack); // [first, second, third]
+
+System.out.println(stack.pop()); // "third"
+System.out.println(stack.pop()); // "second"
+System.out.println(stack.pop()); // "first"
+
+System.out.println(stack.pop()); // throws EmptyStackException</code></pre>
+  <div>
+   <br>
+  </div>
+  <div>
+   The method pop() always throws an exception if the stack is empty.
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   According to the Java Doc, it's preferable to use implementations of the Deque interface as stacks.
+  </div>
+ </body>
+</html>
